@@ -92,6 +92,10 @@ mylib_EXTERNAL_OBJECTS =
 
 libmylib.so.1.0: CMakeFiles/mylib.dir/src/mylib.cpp.o
 libmylib.so.1.0: CMakeFiles/mylib.dir/build.make
+libmylib.so.1.0: /usr/local/lib/libapriltag.so
+libmylib.so.1.0: /usr/local/lib/libopencv_core.so
+libmylib.so.1.0: /usr/local/lib/libopencv_imgproc.so.4.9.0
+libmylib.so.1.0: /usr/local/lib/libopencv_core.so.4.9.0
 libmylib.so.1.0: CMakeFiles/mylib.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jetbot/iterative_setup/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared library libmylib.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mylib.dir/link.txt --verbose=$(VERBOSE)

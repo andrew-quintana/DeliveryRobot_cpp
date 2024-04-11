@@ -4,6 +4,22 @@ cmake_minimum_required(VERSION 3.1)
 # Project's name, version, and language
 project(mylib VERSION 1.0 LANGUAGES CXX)
 
+# Set the include directories
+set(EXTERNAL_LIB_DIR "/usr/local/lib")
+set(EXTERNAL_INCLUDE_DIR "/usr/local/include")
+
+# Find the AprilTag library
+add_library(apriltag SHARED IMPORTED GLOBAL)
+set_target_properties(apriltag PROPERTIES
+    IMPORTED_LOCATION "${EXTERNAL_LIB_DIR}/libapriltag.so"
+    INTERFACE_INCLUDE_DIRECTORIES "/usr/local/include/")
+
+# Find the OpenCV libraries
+find_package(OpenCV REQUIRED COMPONENTS core imgproc)
+if(OpenCV_FOUND)
+  include_directories("/usr/local/include/opencv4")
+endif()
+
 # Add source files to create a shared library named 'mylib'
 add_library(mylib SHARED
   src/mylib.cpp
@@ -17,6 +33,20 @@ set_target_properties(mylib PROPERTIES
   # Specify the public header file
   PUBLIC_HEADER src/mylib.h
 )
+
+# Link libraries to the shared library
+target_link_libraries(mylib
+  PRIVATE
+    apriltag
+    ${OpenCV_LIBS}
+)
+
+# Find the Eigen library
+find_package(Eigen3 REQUIRED)
+if(EIGEN3_FOUND)
+  include_directories(${EIGEN3_INCLUDE_DIR})
+  target_link_libraries(mylib PUBLIC Eigen3::Eigen)
+endif()
 
 # Install the 'mylib' library
 install(TARGETS mylib
@@ -32,28 +62,18 @@ install(FILES ${CMAKE_BINARY_DIR}/mylib.pc
   DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/pkgconfig
 )
 
-# Set the path to the external library
-set(EXTERNAL_LIB_DIR_1 "/usr/local/lib")
-#set(EXTERNAL_LIB_DIR_2 "/path/to/external/library/2")
-set(EXTERNAL_INCLUDE_DIR "/usr/local/include")
 
-# Add the external libraries as imported targets
-add_library(external_lib_1 SHARED IMPORTED)
-set_target_properties(external_lib_1 PROPERTIES
-    IMPORTED_LOCATION "${EXTERNAL_LIB_DIR_1}/libapriltag.so"
-    INTERFACE_INCLUDE_DIRECTORIES "${EXTERNAL_INCLUDE_DIR}")
 
-#add_library(external_lib_2 SHARED IMPORTED)
-#set_target_properties(external_lib_2 PROPERTIES
-#    IMPORTED_LOCATION "${EXTERNAL_LIB_DIR_2}/libexternal2.so"
-#    INTERFACE_INCLUDE_DIRECTORIES "${EXTERNAL_INCLUDE_DIR}")
+# Find the Boost library
+#find_package(Boost REQUIRED)
+#if(Boost_FOUND)
+#  include_directories(${Boost_INCLUDE_DIRS})
+#  target_link_libraries(mylib PUBLIC ${Boost_LIBRARIES})
+#endif()
+# Find the GTest library
+#find_package(GTest REQUIRED)
+#if(GTEST_FOUND)
+#  include_directories(${GTEST_INCLUDE_DIRS})
+#  target_link_libraries(mylib PUBLIC GTest::GTest GTest::Main)
+#endif()
 
-# Include the header files from the extern directory
-include_directories(${EXTERNAL_INCLUDE_DIR})
-
-# Link the external libraries to your target
-target_link_libraries(mylib
-	PUBLIC
-		apriltag
-		#external_lib_2
-) 
