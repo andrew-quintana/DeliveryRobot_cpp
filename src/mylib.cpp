@@ -25,16 +25,15 @@ void testApriltag() {
 
 }
 
-void testOpencv( const std::string& DIR ) {
+void testOpencv( const char* DIR ) {
 
-	const std::string inputSettingsFile = DIR + "/default.xml";
+	std::cout << "Printing DIR: ";
 	std::cout << DIR << std::endl;
-	std::cout << inputSettingsFile << std::endl;
-	std::ifstream file(inputSettingsFile);
+	std::ifstream file(DIR);
 	
 	if (file.is_open())
     {
-        cv::FileStorage fs(inputSettingsFile, cv::FileStorage::READ); // Read the settings
+        cv::FileStorage fs(DIR, cv::FileStorage::READ); // Read the settings
 
         // intrinsic parameters
         fs["camera_matrix"] >> camera_matrix;
@@ -53,26 +52,24 @@ void testOpencv( const std::string& DIR ) {
 
 }
 
-/*
+
 bool testEigen() {
-    // Create a simple Eigen matrix
-    Eigen::Matrix3d matrix;
-    matrix << 1, 2, 3,
-              4, 5, 6,
-              7, 8, 9;
+    // Create a 3x3 matrix
+    Eigen::Matrix3d m;
+    m << 1, 2, 3,
+         4, 5, 6,
+         7, 8, 9;
 
-    // Perform a simple operation on the matrix
-    Eigen::Matrix3d result = matrix * matrix;
+    // Print the matrix
+    std::cout << "The matrix m is:\n" << m << std::endl;
 
-    // Check if the result is as expected
-    Eigen::Matrix3d expected;
-    expected << 30, 36, 42,
-                66, 81, 96,
-                102, 126, 150;
-
-    return (result == expected).all();
+    // Compute the determinant of the matrix
+    double det = m.determinant();
+    std::cout << "The determinant of m is: " << det << std::endl;
+    
+    return true;
 }
-
+/*
 bool testBoost() {
     std::string input = "  Hello, World!  ";
     std::string trimmed;

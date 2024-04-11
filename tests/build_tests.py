@@ -1,7 +1,7 @@
 import ctypes
 
 # Load the shared library
-lib = ctypes.CDLL('/home/jetbot/iterative_setup/build/libmylib.so')
+lib = ctypes.CDLL('/home/jetbot/DeliveryRobot/build/libmylib.so')
 
 # Set the return types of the functions
 #lib.add.restype = ctypes.c_int
@@ -10,11 +10,17 @@ lib = ctypes.CDLL('/home/jetbot/iterative_setup/build/libmylib.so')
 # Call the functions
 lib.testApriltag()
 
-directory = "../docs/"
+directory = "/home/jetbot/iterative_setup/docs/default.xml"
 
 # Define the function signature
 lib.testOpencv.argtypes = [ctypes.c_char_p]
 lib.testOpencv.restype = None
 
 # Call the C++ function with a string
-lib.testOpencv(directory)
+#c_directory = ctypes.c_char_p(directory.encode())
+c_directory = ctypes.create_string_buffer(directory.encode())
+print("ENCODED DIRECTORY STRING")
+lib.testOpencv(c_directory)
+
+# Run the Eigen test
+lib.testEigen()

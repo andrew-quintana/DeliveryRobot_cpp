@@ -6,6 +6,8 @@
 
 #include "opencv2/opencv.hpp"
 
+#include <eigen3/Eigen/Dense>
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -13,9 +15,9 @@ extern "C" {
 
 
 
-/*
-#include <eigen3/Eigen/Core>
 
+
+/*
 #include <boost/algorithm/string.hpp>
 
 #include <gtest/gtest.h>
@@ -23,7 +25,7 @@ extern "C" {
 
 void testApriltag();
 
-void testOpencv( const std::string& DIR);
+void testOpencv( const char* DIR);
 
 bool testEigen();
 
