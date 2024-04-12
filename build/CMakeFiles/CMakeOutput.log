@@ -221,3 +221,17 @@ Parsed CXX implicit link information from above output:
   implicit fwks: []
 
 
+Determining if the function pthread_create exists in the pthread passed with the following output:
+Change Dir: /home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-G9nyfC
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_97ad7/fast && /usr/bin/make  -f CMakeFiles/cmTC_97ad7.dir/build.make CMakeFiles/cmTC_97ad7.dir/build
+make[1]: Entering directory '/home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-G9nyfC'
+Building CXX object CMakeFiles/cmTC_97ad7.dir/CheckFunctionExists.cxx.o
+/usr/bin/c++   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_97ad7.dir/CheckFunctionExists.cxx.o -c /home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-G9nyfC/CheckFunctionExists.cxx
+Linking CXX executable cmTC_97ad7
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_97ad7.dir/link.txt --verbose=1
+/usr/bin/c++  -DCHECK_FUNCTION_EXISTS=pthread_create -rdynamic CMakeFiles/cmTC_97ad7.dir/CheckFunctionExists.cxx.o -o cmTC_97ad7  -lpthread 
+make[1]: Leaving directory '/home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-G9nyfC'
+
+
+

@@ -20,6 +20,15 @@ if(OpenCV_FOUND)
   include_directories("/usr/local/include/opencv4")
 endif()
 
+# Find the Boost library
+find_package(Boost REQUIRED COMPONENTS system)
+include_directories(${Boost_INCLUDE_DIRS})
+
+# Find the GTest library
+find_package(GTest REQUIRED)
+include_directories(${GTEST_INCLUDE_DIRS})
+
+
 # Add source files to create a shared library named 'mylib'
 add_library(mylib SHARED
   src/mylib.cpp
@@ -39,6 +48,9 @@ target_link_libraries(mylib
   PRIVATE
     apriltag
     ${OpenCV_LIBS}
+    ${Boost_LIBRARIES}
+	${GTEST_LIBRARIES}
+	${GTEST_MAIN_LIBRARIES}
 )
 
 # Find the Eigen library
@@ -64,16 +76,8 @@ install(FILES ${CMAKE_BINARY_DIR}/mylib.pc
 
 
 
-# Find the Boost library
-#find_package(Boost REQUIRED)
-#if(Boost_FOUND)
-#  include_directories(${Boost_INCLUDE_DIRS})
-#  target_link_libraries(mylib PUBLIC ${Boost_LIBRARIES})
-#endif()
-# Find the GTest library
-#find_package(GTest REQUIRED)
-#if(GTEST_FOUND)
-#  include_directories(${GTEST_INCLUDE_DIRS})
-#  target_link_libraries(mylib PUBLIC GTest::GTest GTest::Main)
-#endif()
+
+
+
+
 

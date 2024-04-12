@@ -24,3 +24,9 @@ lib.testOpencv(c_directory)
 
 # Run the Eigen test
 lib.testEigen()
+
+# Run Boost test
+lib.testBoost()
+
+# Run GTest test
+lib.testGTest()

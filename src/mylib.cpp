@@ -69,22 +69,31 @@ bool testEigen() {
     
     return true;
 }
-/*
+
 bool testBoost() {
-    std::string input = "  Hello, World!  ";
-    std::string trimmed;
+    // Create a simple undirected graph
+    typedef boost::adjacency_list<boost::vecS, boost::vecS, boost::undirectedS> Graph;
+    Graph g;
 
-    // Use Boost's trim function to remove leading and trailing whitespace
-    boost::trim(input, trimmed);
+    // Add some vertices and edges
+    boost::graph_traits<Graph>::vertex_descriptor v1 = boost::add_vertex(g);
+    boost::graph_traits<Graph>::vertex_descriptor v2 = boost::add_vertex(g);
+    boost::graph_traits<Graph>::vertex_descriptor v3 = boost::add_vertex(g);
+    boost::add_edge(v1, v2, g);
+    boost::add_edge(v2, v3, g);
 
-    // Check if the trimmed string is as expected
-    return trimmed == "Hello, World!";
+    // Print the number of vertices and edges
+    std::cout << "Number of vertices: " << boost::num_vertices(g) << std::endl;
+    std::cout << "Number of edges: " << boost::num_edges(g) << std::endl;
+
+    return 0;
 }
 
-TEST(ExampleTests, TestAddition) {
-    int a = 2;
-    int b = 3;
-    int result = a + b;
-    EXPECT_EQ(result, 5);
+TEST(MyTestCase, MyTest) {
+    EXPECT_EQ(1, 1);
 }
-*/
+
+void testGTest() {
+    ::testing::InitGoogleTest();
+    RUN_ALL_TESTS();
+}

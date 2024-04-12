@@ -8,20 +8,15 @@
 
 #include <eigen3/Eigen/Dense>
 
+#include <boost/graph/graph_traits.hpp>
+#include <boost/graph/adjacency_list.hpp>
+
+#include <gtest/gtest.h>
+
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-
-
-
-
-
-/*
-#include <boost/algorithm/string.hpp>
-
-#include <gtest/gtest.h>
-*/
 
 void testApriltag();
 
@@ -30,6 +25,8 @@ void testOpencv( const char* DIR);
 bool testEigen();
 
 bool testBoost();
+
+void testGTest();
 
 // calibration setup
 cv::Mat camera_matrix;
