@@ -19,7 +19,6 @@ lib.testOpencv.restype = None
 # Call the C++ function with a string
 #c_directory = ctypes.c_char_p(directory.encode())
 c_directory = ctypes.create_string_buffer(directory.encode())
-print("ENCODED DIRECTORY STRING")
 lib.testOpencv(c_directory)
 
 # Run the Eigen test

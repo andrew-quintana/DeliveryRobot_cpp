@@ -31,8 +31,8 @@ include_directories(${GTEST_INCLUDE_DIRS})
 
 # Add source files to create a shared library named 'mylib'
 add_library(mylib SHARED
-  tests/python_cpp_calls/DeliveryFSM.cpp
-  tests/python_cpp_calls/DeliveryFSM.h
+  tests/python_cpp_calls/mylib.cpp
+  tests/python_cpp_calls/mylib.h
 )
 
 # Set properties for the 'mylib' target
