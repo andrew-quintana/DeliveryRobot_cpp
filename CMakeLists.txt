@@ -31,8 +31,8 @@ include_directories(${GTEST_INCLUDE_DIRS})
 
 # Add source files to create a shared library named 'mylib'
 add_library(mylib SHARED
-  src/mylib.cpp
-  src/mylib.h
+  tests/python_cpp_calls/mylib.cpp
+  tests/python_cpp_calls/mylib.h
 )
 
 # Set properties for the 'mylib' target
@@ -40,7 +40,7 @@ set_target_properties(mylib PROPERTIES
   # Set the version of the library to the project's version
   VERSION ${PROJECT_VERSION}
   # Specify the public header file
-  PUBLIC_HEADER src/mylib.h
+  PUBLIC_HEADER tests/python_cpp_calls/mylib.h
 )
 
 # Link libraries to the shared library

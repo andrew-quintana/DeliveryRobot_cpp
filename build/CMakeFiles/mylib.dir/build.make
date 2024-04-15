@@ -69,28 +69,28 @@ include CMakeFiles/mylib.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/mylib.dir/flags.make
 
-CMakeFiles/mylib.dir/src/mylib.cpp.o: CMakeFiles/mylib.dir/flags.make
-CMakeFiles/mylib.dir/src/mylib.cpp.o: /home/jetbot/DeliveryRobot/src/mylib.cpp
-CMakeFiles/mylib.dir/src/mylib.cpp.o: CMakeFiles/mylib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jetbot/DeliveryRobot/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/mylib.dir/src/mylib.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mylib.dir/src/mylib.cpp.o -MF CMakeFiles/mylib.dir/src/mylib.cpp.o.d -o CMakeFiles/mylib.dir/src/mylib.cpp.o -c /home/jetbot/DeliveryRobot/src/mylib.cpp
+CMakeFiles/mylib.dir/tests/python_cpp_calls/mylib.cpp.o: CMakeFiles/mylib.dir/flags.make
+CMakeFiles/mylib.dir/tests/python_cpp_calls/mylib.cpp.o: /home/jetbot/DeliveryRobot/tests/python_cpp_calls/mylib.cpp
+CMakeFiles/mylib.dir/tests/python_cpp_calls/mylib.cpp.o: CMakeFiles/mylib.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jetbot/DeliveryRobot/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/mylib.dir/tests/python_cpp_calls/mylib.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mylib.dir/tests/python_cpp_calls/mylib.cpp.o -MF CMakeFiles/mylib.dir/tests/python_cpp_calls/mylib.cpp.o.d -o CMakeFiles/mylib.dir/tests/python_cpp_calls/mylib.cpp.o -c /home/jetbot/DeliveryRobot/tests/python_cpp_calls/mylib.cpp
 
-CMakeFiles/mylib.dir/src/mylib.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mylib.dir/src/mylib.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jetbot/DeliveryRobot/src/mylib.cpp > CMakeFiles/mylib.dir/src/mylib.cpp.i
+CMakeFiles/mylib.dir/tests/python_cpp_calls/mylib.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mylib.dir/tests/python_cpp_calls/mylib.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jetbot/DeliveryRobot/tests/python_cpp_calls/mylib.cpp > CMakeFiles/mylib.dir/tests/python_cpp_calls/mylib.cpp.i
 
-CMakeFiles/mylib.dir/src/mylib.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mylib.dir/src/mylib.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jetbot/DeliveryRobot/src/mylib.cpp -o CMakeFiles/mylib.dir/src/mylib.cpp.s
+CMakeFiles/mylib.dir/tests/python_cpp_calls/mylib.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mylib.dir/tests/python_cpp_calls/mylib.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jetbot/DeliveryRobot/tests/python_cpp_calls/mylib.cpp -o CMakeFiles/mylib.dir/tests/python_cpp_calls/mylib.cpp.s
 
 # Object files for target mylib
 mylib_OBJECTS = \
-"CMakeFiles/mylib.dir/src/mylib.cpp.o"
+"CMakeFiles/mylib.dir/tests/python_cpp_calls/mylib.cpp.o"
 
 # External object files for target mylib
 mylib_EXTERNAL_OBJECTS =
 
-libmylib.so.1.0: CMakeFiles/mylib.dir/src/mylib.cpp.o
+libmylib.so.1.0: CMakeFiles/mylib.dir/tests/python_cpp_calls/mylib.cpp.o
 libmylib.so.1.0: CMakeFiles/mylib.dir/build.make
 libmylib.so.1.0: /usr/local/lib/libapriltag.so
 libmylib.so.1.0: /usr/local/lib/libopencv_imgproc.so.4.9.0

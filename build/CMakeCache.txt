@@ -249,6 +249,9 @@ GTest_DIR:PATH=/usr/local/lib/cmake/GTest
 //The directory containing a CMake configuration file for OpenCV.
 OpenCV_DIR:PATH=/usr/local/lib/cmake/opencv4
 
+//The directory containing a CMake configuration file for apriltag.
+apriltag_DIR:PATH=/usr/local/share/apriltag/cmake
+
 //The directory containing a CMake configuration file for boost_assert.
 boost_assert_DIR:PATH=/usr/local/lib/cmake/boost_assert-1.84.0
 
@@ -438,6 +441,8 @@ FIND_PACKAGE_MESSAGE_DETAILS_Boost:INTERNAL=[/usr/local/lib/cmake/Boost-1.84.0/B
 FIND_PACKAGE_MESSAGE_DETAILS_GTest:INTERNAL=[/usr/local/lib/cmake/GTest/GTestConfig.cmake][c ][v1.14.0()]
 //Details about finding OpenCV
 FIND_PACKAGE_MESSAGE_DETAILS_OpenCV:INTERNAL=[/usr/local][cfound components: core imgproc ][v4.9.0()]
+//Details about finding Threads
+FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 //ADVANCED property for variable: GMOCK_LIBRARY
 GMOCK_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: GMOCK_LIBRARY_DEBUG

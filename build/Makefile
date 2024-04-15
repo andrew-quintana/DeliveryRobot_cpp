@@ -174,29 +174,29 @@ mylib/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/build
 .PHONY : mylib/fast
 
-src/mylib.o: src/mylib.cpp.o
-.PHONY : src/mylib.o
+tests/python_cpp_calls/mylib.o: tests/python_cpp_calls/mylib.cpp.o
+.PHONY : tests/python_cpp_calls/mylib.o
 
 # target to build an object file
-src/mylib.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/src/mylib.cpp.o
-.PHONY : src/mylib.cpp.o
+tests/python_cpp_calls/mylib.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/tests/python_cpp_calls/mylib.cpp.o
+.PHONY : tests/python_cpp_calls/mylib.cpp.o
 
-src/mylib.i: src/mylib.cpp.i
-.PHONY : src/mylib.i
+tests/python_cpp_calls/mylib.i: tests/python_cpp_calls/mylib.cpp.i
+.PHONY : tests/python_cpp_calls/mylib.i
 
 # target to preprocess a source file
-src/mylib.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/src/mylib.cpp.i
-.PHONY : src/mylib.cpp.i
+tests/python_cpp_calls/mylib.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/tests/python_cpp_calls/mylib.cpp.i
+.PHONY : tests/python_cpp_calls/mylib.cpp.i
 
-src/mylib.s: src/mylib.cpp.s
-.PHONY : src/mylib.s
+tests/python_cpp_calls/mylib.s: tests/python_cpp_calls/mylib.cpp.s
+.PHONY : tests/python_cpp_calls/mylib.s
 
 # target to generate assembly for a file
-src/mylib.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/src/mylib.cpp.s
-.PHONY : src/mylib.cpp.s
+tests/python_cpp_calls/mylib.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/tests/python_cpp_calls/mylib.cpp.s
+.PHONY : tests/python_cpp_calls/mylib.cpp.s
 
 # Help Target
 help:
@@ -211,9 +211,9 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... mylib"
-	@echo "... src/mylib.o"
-	@echo "... src/mylib.i"
-	@echo "... src/mylib.s"
+	@echo "... tests/python_cpp_calls/mylib.o"
+	@echo "... tests/python_cpp_calls/mylib.i"
+	@echo "... tests/python_cpp_calls/mylib.s"
 .PHONY : help
 
 
