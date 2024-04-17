@@ -2,12 +2,15 @@
 // Created by Andrew Quintana on 2/6/24.
 //
 
-#include "DeliveryFSM.h"
+#include "JETBOTPARKING_DELIVERYINTERFACE_H.h"
+#include "delivery_interface.h"
+
 
 DeliveryFSM::DeliveryFSM() {}
 DeliveryFSM::~DeliveryFSM() {}
 
-void DeliveryFSM::command_next(INFO next ) {
+void DeliveryFSM::command_next( INFO next ) {
+    // function to determine the next state based on the current state and information produced
 
     std::string input;
 
@@ -16,7 +19,7 @@ void DeliveryFSM::command_next(INFO next ) {
     switch (machine_state) {
         case MachineState::INITIALIZE:
             switch (next) {
-                case INFO::GOAL_NOT_FOUND:
+                case INFO::NA:
                     machine_state = MachineState::SCAN;
                     break;
                 case INFO::ERROR:
@@ -102,6 +105,8 @@ void DeliveryFSM::command_next(INFO next ) {
 
         case MachineState::PARKING:
             switch(next) {
+                case INFO::NA:
+                    machine_state = MachineState::PARKING;
                 case INFO::GOAL_FOUND:
                     machine_state = MachineState::APPROACH;
                     break;

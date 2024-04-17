@@ -37,8 +37,7 @@ public:
     cv::Size frame_size;
 
     // sensor functions
-    INFO detect(cv::String image, env& measurements, int goal_id );
-    std::string take_image (  ); // TODO H0: Implement
+    bool detect(cv::String image, env& measurements );
 
 private:
 

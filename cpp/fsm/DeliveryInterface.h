@@ -2,8 +2,8 @@
 // Created by Andrew Quintana on 2/7/24.
 //
 
-#ifndef JETBOTPARKING_DELIVERYMAIN_H
-#define JETBOTPARKING_DELIVERYMAIN_H
+#ifndef JETBOTPARKING_DELIVERYINTERFACE_H
+#define JETBOTPARKING_DELIVERYINTERFACE_H
 
 #include "AprilTagSensor.h"
 #include "Astar.h"
@@ -20,7 +20,9 @@
 // ---------------------------- OBJECT DECLARATION ----------------------------
 // state machine
 DeliveryFSM fsm = *new DeliveryFSM();
-MachineState machine_state = fsm.get_machine_state();
+MachineState machine_state = fsm.get_machine_state;
+INFO next_info;
+INFO measure_output;
 
 // apriltag
 AprilTagSensor* sensor;
@@ -50,10 +52,9 @@ float velocity_m_s = 5;
 float angular_velocity_rad_s = 5;
 
 
-
 // ---------------------------- VARIABLE DECLARATION ----------------------------
 int goal_idx = 0;
-int goal_ids[] = {1, 2};    // TODO need method of iterating through goals and passing/updating
+std::queue<int> goal_ids = {1, 2};    // TODO need method of iterating through goals and passing/updating
 state goal_state;
 env measurements;
 std::vector<std::string> obstacle_ids = {"8"};
@@ -61,19 +62,24 @@ std::map<std::string, std::vector<int>> obstacle_v_idx;
 std::map<std::string, std::vector<int>> obstacle_pov_idx;
 std::vector<std::vector<state>> obstacles;
 std::priority_queue<std::pair<float,int>> sorted_povs;
+int povs_visited = 0;
 
 // computational geometry
 float obstacle_side_m = 0.020;
 
 // SCAN variables
-int scan_resolution = 8;
+int scan_resolution = 8;    // quantity of rotations required
+int rotate = 0;             // quantity of rotations executed
 float angle_interval_rad = (2 * M_PI) / scan_resolution;
 
+// PARKING variables
+bool parked = false;
+bool orth = false;
+
+
 // ---------------------------- FUNCTION DECLARATION ----------------------------
-INFO robot_measure(  );
-void robot_rotate( float rotation);
-void robot_translate( float translation );
+INFO robot_measure( std::string img_path );
 void set_goal_state( state& tag_loc );
 void process_obstacles( std::vector<std::vector<state>>& obstacle_states_set );
 
-#endif //JETBOTPARKING_DELIVERYMAIN_H
+#endif //JETBOTPARKING_DELIVERYINTERFACE_H

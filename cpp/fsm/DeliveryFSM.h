@@ -7,9 +7,18 @@
 
 #pragma once
 
+#include "AprilTagSensor.h"
+#include "Astar.h"
+#include "ComputationalGeometry.h"
+#include "Mapper.h"
+#include "OnlineSLAM.h"
+#include "RobotSim.h"
+#include "Utilities.h"
+
 #include <map>
 #include <array>
 #include <iostream>
+#include <queue>
 
 enum class INFO {
     GOAL_FOUND,
@@ -46,7 +55,7 @@ enum class ParkingState {
     ERROR
 };
 
-class DeliveryFSM {
+class DeliveryFSM : public Component {
 private:
 
     MachineState machine_state = MachineState::INITIALIZE;
@@ -64,6 +73,7 @@ private:
         ParkingState parking_state;
     };
 
+
 public:
 
     DeliveryFSM();
@@ -80,6 +90,7 @@ public:
 
 };
 
+std::string step_fsm();
 
 
 #endif //JETBOTPARKING_DELIVERYFSM_H
