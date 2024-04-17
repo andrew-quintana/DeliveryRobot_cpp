@@ -91,7 +91,7 @@ Astar::action Astar::astar_move(state& robot_state, std::vector<std::vector<stat
 
     // use the beam search if distance is too far to park
     // implies that the state machine will call astar until this algorithm determines it is close enough to park
-    if (goal_dist > max_distance * 1.25) {
+    if (goal_dist > max_distance * fos) {
         action = beam_search( robot_state, obstacles, action );
     }
     // command parking action once close enough
@@ -261,7 +261,7 @@ Astar::action Astar::beam_search(state& robot_state, std::vector<std::vector<sta
                     action.steering = graph[initial].vertex_state[2] -
                                       graph[action_idx].vertex_state[2];   // TODO H2: EVALUATE ME
                     action.goal = graph[goal].vertex_state;
-                    action.next = INFO::NA;
+                    action.next = INFO::NA;     // NA to continue along path
 
                     if (debug) {
                         std::printf("%s UPCOMING PATH:\n", timestamp().c_str());

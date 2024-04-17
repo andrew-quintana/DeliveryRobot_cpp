@@ -72,7 +72,7 @@ AprilTagSensor::~AprilTagSensor()
 }
 
 // ----------------------------- CLASS FUNCTIONS -----------------------------
-INFO AprilTagSensor::detect(cv::String image, env& measurements, int goal_id )
+bool AprilTagSensor::detect(cv::String image, env& measurements )
 {
     //
     //std::printf("Preparing image for detection...\n");
@@ -88,7 +88,7 @@ INFO AprilTagSensor::detect(cv::String image, env& measurements, int goal_id )
         pjpeg_t *pjpeg = pjpeg_create_from_file(path, 0, &err);
         if (pjpeg == NULL) {
             printf("pjpeg failed to load: %s, error %d\n", path, err);
-            return INFO::ERROR;
+            return false;
         }
 
         im = pjpeg_to_u8_baseline(pjpeg);
@@ -174,12 +174,8 @@ INFO AprilTagSensor::detect(cv::String image, env& measurements, int goal_id )
         // assign calculated and measured values to
         measurements[std::to_string(det->id)] = state(x, y, r_state[psi]);
 
-        if (det->id == goal_id) {
-            return INFO::GOAL_FOUND;
-        }
-
     }
-    return INFO::GOAL_NOT_FOUND;
+    return true;
 }
 
 void AprilTagSensor::rotation_conversion(apriltag_pose_t pose, float& roll, float& pitch, float& yaw) {
@@ -215,11 +211,6 @@ void AprilTagSensor::print_state(env& states ) {
         std::cout << it->second(4) << " ";
         std::cout << it->second(5) << std::endl << std::endl;
     }
-}
-
-std::string AprilTagSensor::take_image () {
-    // TODO (H0) IMPLEMENT
-    return "INFO::NA";
 }
 
 
