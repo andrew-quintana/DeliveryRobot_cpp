@@ -177,7 +177,7 @@ void Mapping::grid_plotter(Mat& image, int spacing, int thickness ) {
     }
 }
 
-void Mapping::plot_radar(env& states, cv::string savePath, bool close) {
+void Mapping::plot_radar(env& states, std::string savePath, bool close) {
 
     std::string testName;
 

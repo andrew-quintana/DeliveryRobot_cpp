@@ -93,7 +93,6 @@ void DeliveryFSM::command_next( INFO next ) {
                     break;
                 case INFO::ERROR:
                     machine_state = MachineState::ERROR;
-                    approach_state = ApproachState::ERROR;
                     break;
                 default:
                     std::printf("\n\tCOMMAND NOT RECOGNIZED IN APPROACH STATE\t");
@@ -134,10 +133,6 @@ MachineState DeliveryFSM::get_machine_state() { return machine_state; }
 
 ScanState DeliveryFSM::get_scan_state() { return scan_state; }
 
-ApproachState DeliveryFSM::get_appraoch_state() { return approach_state; }
-
-ParkingState DeliveryFSM::get_parking_state() { return parking_state; }
-
 std::string info_str( INFO info ) {
     switch (info) {
         case INFO::GOAL_FOUND:                  return "GOAL_FOUND";
@@ -158,7 +153,7 @@ std::string machine_state_str( MachineState ms ) {
         case MachineState::PARKING:             return "PARKING";
         case MachineState::SHUTDOWN:            return "SHUTDOWN";
         case MachineState::ERROR:               return "ERROR";
-        default:                                return "unknown"
+        default:                                return "unknown";
     }
 }
 

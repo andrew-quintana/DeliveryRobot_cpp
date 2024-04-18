@@ -2,8 +2,8 @@
 // Created by Andrew Quintana on 1/7/24.
 //
 
-#ifndef JETBOTPARKING_UTILITIES_H
-#define JETBOTPARKING_UTILITIES_H
+#ifndef UTILITIES_H
+#define UTILITIES_H
 
 #include "DeliveryFSM.h"
 
@@ -25,6 +25,15 @@ public:
     bool logging;
     bool debug;
     bool verbose;
+};
+
+enum class INFO {
+    GOAL_FOUND,
+    GOAL_NOT_FOUND,
+    AT_GOAL,
+    NOT_AT_GOAL,
+    ERROR,
+    NA
 };
 
 typedef Eigen::Vector3f state;
@@ -65,4 +74,4 @@ void time_print( const std::string& format, Args... args ) {
 
 
 
-#endif //JETBOTPARKING_UTILITIES_H
+#endif //UTILITIES_H

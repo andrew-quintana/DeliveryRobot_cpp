@@ -5,8 +5,8 @@
 // https://www.boost.org/doc/libs/1_75_0/libs/graph/doc/quick_tour.html
 //
 
-#ifndef JETBOTPARKING_ASTAR_H
-#define JETBOTPARKING_ASTAR_H
+#ifndef ASTAR_H
+#define ASTAR_H
 
 #include "BoostGraph.h"
 #include "Utilities.h"
@@ -46,7 +46,7 @@ public:
             float robot_radius);
     ~Astar();
 
-    static struct action {
+    struct action {
         INFO next = INFO::NA;   // provide communication to state machine
         float distance;                                 // distance for move
         float steering;                                 // steering or rotation for move
@@ -88,4 +88,4 @@ private:
 };
 
 
-#endif //JETBOTPARKING_ASTAR_H
+#endif //ASTAR_H

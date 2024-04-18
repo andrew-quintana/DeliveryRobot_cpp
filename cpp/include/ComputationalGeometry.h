@@ -2,8 +2,8 @@
 // Created by Andrew Quintana on 2/5/24.
 //
 
-#ifndef JETBOTPARKING_COMPUTATIONALGEOMETRY_H
-#define JETBOTPARKING_COMPUTATIONALGEOMETRY_H
+#ifndef COMPUTATIONALGEOMETRY_H
+#define COMPUTATIONALGEOMETRY_H
 
 #include "Utilities.h"
 
@@ -43,4 +43,4 @@ bool node_test( state& node, std::vector<std::vector<state>> obstacles, float ag
 
 bool edge_test( state& line_start, state& line_end, std::vector<std::vector<state>> obstacles, float agent_radius_m, float fos );
 
-#endif //JETBOTPARKING_COMPUTATIONALGEOMETRY_H
+#endif //COMPUTATIONALGEOMETRY_H

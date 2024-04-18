@@ -2,8 +2,8 @@
 // Created by Andrew Quintana on 12/6/23.
 //
 
-#ifndef JETBOTPARKING_ONLINESLAM_H
-#define JETBOTPARKING_ONLINESLAM_H
+#ifndef ONLINESLAM_H
+#define ONLINESLAM_H
 
 #include "AprilTagSensor.h"
 #include "Utilities.h"
@@ -60,4 +60,4 @@ struct Robot {
 };
 
 
-#endif //JETBOTPARKING_ONLINESLAM_H
+#endif //ONLINESLAM_H

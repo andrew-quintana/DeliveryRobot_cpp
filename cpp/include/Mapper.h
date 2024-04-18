@@ -2,8 +2,8 @@
 // Created by Andrew Quintana on 12/6/23.
 //
 
-#ifndef JETBOTPARKING_MAPPER_H
-#define JETBOTPARKING_MAPPER_H
+#ifndef MAPPER_H
+#define MAPPER_H
 
 #include "Utilities.h"
 
@@ -28,7 +28,7 @@ public:
     Mapping( std::string *window_name );
     ~Mapping();
 
-    void plot_radar(env& states, cv::string savePath, bool close = 1);
+    void plot_radar(env& states, std::string savePath, bool close = 1);
 
     std::string *window_name;
 };
@@ -38,4 +38,4 @@ void coord_text(Mat& image, int color[3], std::string id, float c_x, float c_y, 
 
 
 
-#endif //JETBOTPARKING_MAPPER_H
+#endif //MAPPER_H

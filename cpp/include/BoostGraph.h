@@ -2,8 +2,8 @@
 // Created by Andrew Quintana on 2/1/24.
 //
 
-#ifndef JETBOTPARKING_BOOSTGRAPH_H
-#define JETBOTPARKING_BOOSTGRAPH_H
+#ifndef BOOSTGRAPH_H
+#define BOOSTGRAPH_H
 
 #include "Utilities.h"
 #include <iostream>                  // for std::cout
@@ -66,4 +66,4 @@ public:
 
 };
 
-#endif //JETBOTPARKING_BOOSTGRAPH_H
+#endif //BOOSTGRAPH_H

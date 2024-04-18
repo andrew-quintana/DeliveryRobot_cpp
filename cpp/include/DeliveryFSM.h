@@ -19,15 +19,6 @@
 #include <iostream>
 #include <queue>
 
-enum class INFO {
-    GOAL_FOUND,
-    GOAL_NOT_FOUND,
-    AT_GOAL,
-    NOT_AT_GOAL,
-    ERROR,
-    NA
-};
-
 enum class MachineState {
     INITIALIZE,
     SCAN,
@@ -67,4 +58,4 @@ std::string info_str( INFO info );
 std::string machine_state_str( MachineState ms );
 std::string scan_state_str( ScanState ss );
 
-#endif //JETBOTPARKING_DELIVERYFSM_H
+#endif //DELIVERYFSM_H

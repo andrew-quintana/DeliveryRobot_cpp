@@ -2,8 +2,8 @@
 // Created by Andrew Quintana on 10/18/23.
 //
 
-#ifndef JETBOTPARKING_APRILTAGSENSOR_H
-#define JETBOTPARKING_APRILTAGSENSOR_H
+#ifndef APRILTAGSENSOR_H
+#define APRILTAGSENSOR_H
 
 #include "Utilities.h"
 
@@ -50,4 +50,4 @@ private:
 };
 
 
-#endif //JETBOTPARKING_APRILTAGSENSOR_H
+#endif //APRILTAGSENSOR_H
