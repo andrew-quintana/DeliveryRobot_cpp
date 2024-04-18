@@ -2,8 +2,8 @@
 // Created by Andrew Quintana on 2/6/24.
 //
 
-#ifndef JETBOTPARKING_DELIVERYFSM_H
-#define JETBOTPARKING_DELIVERYFSM_H
+#ifndef DELIVERYFSM_H
+#define DELIVERYFSM_H
 
 #pragma once
 
@@ -12,7 +12,6 @@
 #include "ComputationalGeometry.h"
 #include "Mapper.h"
 #include "OnlineSLAM.h"
-#include "RobotSim.h"
 #include "Utilities.h"
 
 #include <map>

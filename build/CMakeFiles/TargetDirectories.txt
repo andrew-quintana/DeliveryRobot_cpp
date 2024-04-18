@@ -1,4 +1,4 @@
-/home/jetbot/DeliveryRobot/build/CMakeFiles/mylib.dir
+/home/jetbot/DeliveryRobot/build/CMakeFiles/delivery_interface.dir
 /home/jetbot/DeliveryRobot/build/CMakeFiles/edit_cache.dir
 /home/jetbot/DeliveryRobot/build/CMakeFiles/rebuild_cache.dir
 /home/jetbot/DeliveryRobot/build/CMakeFiles/list_install_components.dir

@@ -2,17 +2,10 @@
 // Created by Andrew Quintana on 2/7/24.
 //
 
-#ifndef JETBOTPARKING_DELIVERYINTERFACE_H
-#define JETBOTPARKING_DELIVERYINTERFACE_H
+#ifndef DELIVERYINTERFACE_H
+#define DELIVERYINTERFACE_H
 
-#include "AprilTagSensor.h"
-#include "Astar.h"
-#include "ComputationalGeometry.h"
-#include "Mapper.h"
 #include "DeliveryFSM.h"
-#include "OnlineSLAM.h"
-#include "RobotSim.h"
-#include "Utilities.h"
 
 #include <map>
 #include <queue>
@@ -112,4 +105,4 @@ void process_obstacles( std::vector<std::vector<state>>& obstacle_states_set );
 Log update_log();
 void print_log();
 
-#endif //JETBOTPARKING_DELIVERYINTERFACE_H
+#endif //DELIVERYINTERFACE_H

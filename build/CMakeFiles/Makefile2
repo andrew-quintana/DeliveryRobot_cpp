@@ -63,7 +63,7 @@ CMAKE_BINARY_DIR = /home/jetbot/DeliveryRobot/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/mylib.dir/all
+all: CMakeFiles/delivery_interface.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -71,34 +71,34 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/mylib.dir/clean
+clean: CMakeFiles/delivery_interface.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/mylib.dir
+# Target rules for target CMakeFiles/delivery_interface.dir
 
 # All Build rule for target.
-CMakeFiles/mylib.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jetbot/DeliveryRobot/build/CMakeFiles --progress-num=1,2 "Built target mylib"
-.PHONY : CMakeFiles/mylib.dir/all
+CMakeFiles/delivery_interface.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/delivery_interface.dir/build.make CMakeFiles/delivery_interface.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/delivery_interface.dir/build.make CMakeFiles/delivery_interface.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jetbot/DeliveryRobot/build/CMakeFiles --progress-num=1,2 "Built target delivery_interface"
+.PHONY : CMakeFiles/delivery_interface.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/mylib.dir/rule: cmake_check_build_system
+CMakeFiles/delivery_interface.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/jetbot/DeliveryRobot/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/mylib.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/delivery_interface.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/jetbot/DeliveryRobot/build/CMakeFiles 0
-.PHONY : CMakeFiles/mylib.dir/rule
+.PHONY : CMakeFiles/delivery_interface.dir/rule
 
 # Convenience name for target.
-mylib: CMakeFiles/mylib.dir/rule
-.PHONY : mylib
+delivery_interface: CMakeFiles/delivery_interface.dir/rule
+.PHONY : delivery_interface
 
 # clean rule for target.
-CMakeFiles/mylib.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/clean
-.PHONY : CMakeFiles/mylib.dir/clean
+CMakeFiles/delivery_interface.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/delivery_interface.dir/build.make CMakeFiles/delivery_interface.dir/clean
+.PHONY : CMakeFiles/delivery_interface.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

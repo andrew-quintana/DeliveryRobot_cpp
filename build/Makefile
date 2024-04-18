@@ -67,8 +67,8 @@ CMAKE_BINARY_DIR = /home/jetbot/DeliveryRobot/build
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -162,41 +162,41 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named mylib
+# Target rules for targets named delivery_interface
 
 # Build rule for target.
-mylib: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mylib
-.PHONY : mylib
+delivery_interface: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 delivery_interface
+.PHONY : delivery_interface
 
 # fast build rule for target.
-mylib/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/build
-.PHONY : mylib/fast
+delivery_interface/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/delivery_interface.dir/build.make CMakeFiles/delivery_interface.dir/build
+.PHONY : delivery_interface/fast
 
-tests/python_cpp_calls/mylib.o: tests/python_cpp_calls/mylib.cpp.o
-.PHONY : tests/python_cpp_calls/mylib.o
+cpp/src/DeliveryFSM.o: cpp/src/DeliveryFSM.cpp.o
+.PHONY : cpp/src/DeliveryFSM.o
 
 # target to build an object file
-tests/python_cpp_calls/mylib.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/tests/python_cpp_calls/mylib.cpp.o
-.PHONY : tests/python_cpp_calls/mylib.cpp.o
+cpp/src/DeliveryFSM.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/delivery_interface.dir/build.make CMakeFiles/delivery_interface.dir/cpp/src/DeliveryFSM.cpp.o
+.PHONY : cpp/src/DeliveryFSM.cpp.o
 
-tests/python_cpp_calls/mylib.i: tests/python_cpp_calls/mylib.cpp.i
-.PHONY : tests/python_cpp_calls/mylib.i
+cpp/src/DeliveryFSM.i: cpp/src/DeliveryFSM.cpp.i
+.PHONY : cpp/src/DeliveryFSM.i
 
 # target to preprocess a source file
-tests/python_cpp_calls/mylib.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/tests/python_cpp_calls/mylib.cpp.i
-.PHONY : tests/python_cpp_calls/mylib.cpp.i
+cpp/src/DeliveryFSM.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/delivery_interface.dir/build.make CMakeFiles/delivery_interface.dir/cpp/src/DeliveryFSM.cpp.i
+.PHONY : cpp/src/DeliveryFSM.cpp.i
 
-tests/python_cpp_calls/mylib.s: tests/python_cpp_calls/mylib.cpp.s
-.PHONY : tests/python_cpp_calls/mylib.s
+cpp/src/DeliveryFSM.s: cpp/src/DeliveryFSM.cpp.s
+.PHONY : cpp/src/DeliveryFSM.s
 
 # target to generate assembly for a file
-tests/python_cpp_calls/mylib.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/tests/python_cpp_calls/mylib.cpp.s
-.PHONY : tests/python_cpp_calls/mylib.cpp.s
+cpp/src/DeliveryFSM.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/delivery_interface.dir/build.make CMakeFiles/delivery_interface.dir/cpp/src/DeliveryFSM.cpp.s
+.PHONY : cpp/src/DeliveryFSM.cpp.s
 
 # Help Target
 help:
@@ -210,10 +210,10 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... mylib"
-	@echo "... tests/python_cpp_calls/mylib.o"
-	@echo "... tests/python_cpp_calls/mylib.i"
-	@echo "... tests/python_cpp_calls/mylib.s"
+	@echo "... delivery_interface"
+	@echo "... cpp/src/DeliveryFSM.o"
+	@echo "... cpp/src/DeliveryFSM.i"
+	@echo "... cpp/src/DeliveryFSM.s"
 .PHONY : help
 
 

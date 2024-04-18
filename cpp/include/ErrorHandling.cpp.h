@@ -2,8 +2,8 @@
 // Created by Andrew Quintana on 2/15/24.
 //
 
-#ifndef JETBOTPARKING_ERRORHANDLING_CPP_H
-#define JETBOTPARKING_ERRORHANDLING_CPP_H
+#ifndef ERRORHANDLING_CPP_H
+#define ERRORHANDLING_CPP_H
 
 #include "DeliveryMain.h"
 
@@ -31,4 +31,4 @@ void parking_error() {
 
 }
 
-#endif //JETBOTPARKING_ERRORHANDLING_CPP_H
+#endif //ERRORHANDLING_CPP_H

@@ -12,7 +12,8 @@ set(EXTERNAL_INCLUDE_DIR "/usr/local/include")
 add_library(apriltag SHARED IMPORTED GLOBAL)
 set_target_properties(apriltag PROPERTIES
     IMPORTED_LOCATION "${EXTERNAL_LIB_DIR}/libapriltag.so"
-    INTERFACE_INCLUDE_DIRECTORIES "/usr/local/include/")
+    INTERFACE_INCLUDE_DIRECTORIES "/usr/local/include/apriltag"
+)
 
 # Find the OpenCV libraries
 find_package(OpenCV REQUIRED COMPONENTS core imgproc)
@@ -30,7 +31,7 @@ include_directories(${GTEST_INCLUDE_DIRS})
 
 # Add source files to create a shared library named 'delivery_interface'
 add_library(delivery_interface SHARED
-  cpp/fsm/DeliveryFSM.cpp
+  cpp/src/DeliveryFSM.cpp
   include/delivery_interface.h
 )
 
@@ -43,13 +44,15 @@ set_target_properties(delivery_interface PROPERTIES
 )
 
 # Link libraries to the shared library
-target_link_libraries(delivery_interface
+target_include_directories(delivery_interface
   PRIVATE
-    apriltag
+	apriltag
     ${OpenCV_LIBS}
     ${Boost_LIBRARIES}
 	${GTEST_LIBRARIES}
 	${GTEST_MAIN_LIBRARIES}
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
+    ${CMAKE_CURRENT_SOURCE_DIR}/cpp/include
 )
 
 # Find the Eigen library
