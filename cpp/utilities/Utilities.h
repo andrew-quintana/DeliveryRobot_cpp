@@ -15,6 +15,7 @@
 #include "Eigen/Dense"
 #include <map>
 #include <random>
+#include <stdio.h>
 
 class Component {
 public:

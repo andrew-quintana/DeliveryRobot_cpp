@@ -245,8 +245,8 @@ protected:
     state robot_state;
 
     void SetUp() override {
-        cg_debug = true;
-        cg_verbose = false;
+        debug = true;
+        verbose = false;
 
         robot_nav = new Astar( 5, 0.010, 1,
                                1, 1, 0.015);

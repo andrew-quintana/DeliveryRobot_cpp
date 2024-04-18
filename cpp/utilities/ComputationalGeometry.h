@@ -13,12 +13,15 @@
 #include "boost/graph/graph_traits.hpp"
 #include "boost/graph/adjacency_list.hpp"
 #include <map>
+#include <cmath>
 #include "Eigen/Dense"
 
-extern bool cg_debug;
-extern bool cg_verbose;
+extern bool debug;
+extern bool verbose;
 
 float euclidian( state& state1, state& state2 );
+
+float angle_2d( state& state1, state& state2 );
 
 bool collinear(state& a, state& b, state& c);
 

@@ -125,7 +125,6 @@ void DeliveryFSM::command_next( INFO next ) {
                     break;
                 case INFO::ERROR:
                     machine_state = MachineState::ERROR;
-                    parking_state = ParkingState::ERROR;
                 default:
                     std::printf("\n\tCOMMAND NOT RECOGNIZED IN APPROACH STATE\t");
                     break;
@@ -141,14 +140,35 @@ ApproachState DeliveryFSM::get_appraoch_state() { return approach_state; }
 
 ParkingState DeliveryFSM::get_parking_state() { return parking_state; }
 
-struct DeliveryFSM::status DeliveryFSM::get_status() {
+std::string info_str( INFO info ) {
+    switch (info) {
+        case INFO::GOAL_FOUND:                  return "GOAL_FOUND";
+        case INFO::GOAL_NOT_FOUND:              return "GOAL_NOT_FOUND";
+        case INFO::AT_GOAL:                     return "AT_GOAL";
+        case INFO::NOT_AT_GOAL:                 return "NOT_AT_GOAL";
+        case INFO::ERROR:                       return "ERROR";
+        case INFO::NA:                          return "NA";
+        default:                                return "unknown";
+    }
+}
 
-    DeliveryFSM::status current_status{};
-    current_status.machine_state = this->machine_state;
-    current_status.scan_state = this->scan_state;
-    current_status.approach_state = this->approach_state;
-    current_status.parking_state = this->parking_state;
+std::string machine_state_str( MachineState ms ) {
+    switch (ms) {
+        case MachineState::INITIALIZE:          return "INITIALIZE";
+        case MachineState::SCAN:                return "SCAN";
+        case MachineState::APPROACH:            return "APPROACH";
+        case MachineState::PARKING:             return "PARKING";
+        case MachineState::SHUTDOWN:            return "SHUTDOWN";
+        case MachineState::ERROR:               return "ERROR";
+        default:                                return "unknown"
+    }
+}
 
-    return current_status;
-
+std::string scan_state_str( ScanState ss ) {
+    switch (ss) {
+        case ScanState::ROTATE:                 return "ROTATE";
+        case ScanState::POV_MOVE:               return "POV_MOVE";
+        case ScanState::ERROR:                  return "ERROR";
+        default:                                return "unknown";
+    }
 }

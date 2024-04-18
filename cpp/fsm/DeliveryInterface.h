@@ -17,12 +17,41 @@
 #include <map>
 #include <queue>
 
+// ------------------------- AVAILABLE FOR DEBUGGING --------------------------
+bool debug = true;
+
+struct Log {
+    int cycle = 0;
+
+    // current states
+    MachineState machine_current = MachineState::INITIALIZE;
+    ScanState scan_current = ScanState::ROTATE;
+
+    // decision making
+    INFO fsm_info;
+    std::string request;
+
+    // next states
+    MachineState machine_next;
+    ScanState scan_next;
+
+    // mapping
+    Eigen::Vector3f robot;
+    Eigen::Vector3f goal;
+    int idx;
+    Eigen::Vector3f tag1;
+    Eigen::Vector3f tag2;
+    Eigen::Vector3f tag8;
+}
+
+
 // ---------------------------- OBJECT DECLARATION ----------------------------
 // state machine
 DeliveryFSM fsm = *new DeliveryFSM();
 MachineState machine_state = fsm.get_machine_state;
 INFO next_info;
 INFO measure_output;
+Log log;
 
 // apriltag
 AprilTagSensor* sensor;
@@ -76,10 +105,11 @@ float angle_interval_rad = (2 * M_PI) / scan_resolution;
 bool parked = false;
 bool orth = false;
 
-
 // ---------------------------- FUNCTION DECLARATION ----------------------------
 INFO robot_measure( std::string img_path );
-void set_goal_state( state& tag_loc );
+void set_goal_state();
 void process_obstacles( std::vector<std::vector<state>>& obstacle_states_set );
+Log update_log();
+void print_log();
 
 #endif //JETBOTPARKING_DELIVERYINTERFACE_H

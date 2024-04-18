@@ -106,7 +106,6 @@ std::string step_fsm( std::string img_path ) {
             }
 
         case MachineState::APPROACH:
-            // TODO H1: determine if all should be cleaned up to avoid having internal loops like this one
 
             // determine next step on path
             next_move = nav->astar_move(
@@ -166,8 +165,20 @@ std::string step_fsm( std::string img_path ) {
     }
 
     fsm.command_next(next_info);
+    update_log();
+    if (debug) { print_log(); }
     return output;
 
+}
+
+void set_goal_state() {
+    if (measurements.count(goal_idx) > 0) {
+        goal_state = measurements[std::to_string(goal_idx)];
+    }
+    else {
+        printf("WARNING: UNABLE TO SET ")
+    }
+    
 }
 
 
@@ -245,5 +256,57 @@ void process_obstacles( std::vector<std::vector<state>>& obstacle_states_set ) {
         }
 
     }
+
+}
+
+Log update_log() {
+    cycle++;
+
+    // current states
+    log.machine_current = log.machine_next;
+    log.scan_current = log.scan_next;
+
+    // decision making
+    log.fsm_info = next_info;
+    log.request = output;
+
+    // next_states
+    log.machine_next = fsm.get_machine_state();
+    log.scan_next = fsm.get_scan_state();
+
+    // mapping
+    log.robot = robot_state;
+    log.goal = goal_state;
+    log.idx = goal_idx;
+    log.tag1 = measurements["1"];
+    log.tag2 = measurements["2"];
+    log.tag8 = measurements["8"];
+}
+
+Log print_log() {
+    printf("PRINTING LOG FOR CYLCE {}", cycle);
+
+    // current states
+    printf("\tCURRENT STATES:");
+    printf("\t\tMACHINE STATE: {}", machine_state_str(log.machine_current));
+    printf("\t\tSCAN STATE: {}", machine_state_str(log.scan_current));
+
+    // decision making
+    printf("\tDECISION MAKING:");
+    printf("\t\tCOMMAND INFO: {}", log.fsm_info);
+    printf("\t\tREQUEST: {}", log.request);
+
+    // next states
+    printf("\tNEXT STATES:");
+    printf("\t\tMACHINE STATE: {}", machine_state_str(log.machine_next));
+    printf("\t\tSCAN STATE: {}", machine_state_str(log.scan_next));
+    
+    // mapping
+    printf("\tMAPPING:");
+    printf("\t\tROBOT STATE: x: {}, y: {}, th: {}", log.robot[0], log.robot[1], log.robot[2]);
+    printf("\t\tGOAL STATE ({}): x: {}, y: {}, th: {}", log.idx, log.robot[0], log.robot[1], log.robot[2]);
+    printf("\t\tTAG1 STATE: x: {}, y: {}, th: {}", log.tag1[0], log.tag1[1], log.tag1[2]);
+    printf("\t\tTAG2 STATE: x: {}, y: {}, th: {}", log.tag2[0], log.tag2[1], log.tag2[2]);
+    printf("\t\tTAG8 STATE: x: {}, y: {}, th: {}", log.tag8[0], log.tag8[1], log.tag8[2]);
 
 }

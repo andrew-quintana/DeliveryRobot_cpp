@@ -30,8 +30,8 @@ include_directories(${GTEST_INCLUDE_DIRS})
 
 # Add source files to create a shared library named 'delivery_interface'
 add_library(delivery_interface SHARED
-  tests/python_cpp_calls/DeliveryFSM.cpp
-  tests/python_cpp_calls/delivery_interface.h
+  cpp/fsm/DeliveryFSM.cpp
+  include/delivery_interface.h
 )
 
 # Set properties for the 'delivery_interface' target

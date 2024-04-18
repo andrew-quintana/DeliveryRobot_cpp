@@ -258,8 +258,7 @@ Astar::action Astar::beam_search(state& robot_state, std::vector<std::vector<sta
                         prev = graph[prev].from;
                     }
                     action.distance = euclidian(graph[initial].vertex_state, graph[action_idx].vertex_state);
-                    action.steering = graph[initial].vertex_state[2] -
-                                      graph[action_idx].vertex_state[2];   // TODO H2: EVALUATE ME
+                    action.steering = angle_2d(graph[initial].vertex_state, graph[action_idx].vertex_state);
                     action.goal = graph[goal].vertex_state;
                     action.next = INFO::NA;     // NA to continue along path
 

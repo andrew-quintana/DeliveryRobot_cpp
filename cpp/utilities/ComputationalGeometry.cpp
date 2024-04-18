@@ -4,8 +4,8 @@
 
 #include "ComputationalGeometry.h"
 
-bool cg_debug = true;
-bool cg_verbose = false;
+bool debug = true;
+bool verbose = false;
 
 // euclidian euclidian function per: http://theory.stanford.edu/~amitp/GameProgramming/Heuristics.html
 float euclidian( state& state1, state& state2 ) {
@@ -22,6 +22,15 @@ float euclidian( state& state1, state& state2 ) {
 
     return heuristic;
 
+}
+
+float angle_2d( state& state1, state& state2 ) {
+    // getting x and y only
+    Eigen::Vector2f state1_2d = state1.head<2>();
+    Eigen::Vector2f state2_2d = state2.head<2>();
+    
+    // based on dot product formula
+    return std::acos(state1_2d.dot(state2_2d)) / (state1_2d.norm() * state2_2d.norm());
 }
 
 // function to check if points a, b, and c are collinear
@@ -165,7 +174,7 @@ bool node_test( state& node, std::vector<std::vector<state>> obstacles, float ag
             // determine adjacent vertex index with wraparound
             int j = (i == obstacle_points.size() - 1) ? 0 : i + 1;
 
-            if (cg_verbose) std::printf("NODE TO OBSTACLE EDGE DIST = %f < %f:\tNODE: (%f, %f)\tEDGE (%f, %f)-(%f, %f)\n",
+            if (verbose) std::printf("NODE TO OBSTACLE EDGE DIST = %f < %f:\tNODE: (%f, %f)\tEDGE (%f, %f)-(%f, %f)\n",
                                       distance_to_line_segment(node, obstacle_points[i], obstacle_points[j]),
                                       agent_radius_m * fos,
                                       node[0], node[1],
@@ -174,7 +183,7 @@ bool node_test( state& node, std::vector<std::vector<state>> obstacles, float ag
 
             //determine if too close to obstacle
             if (distance_to_line_segment(node, obstacle_points[i], obstacle_points[j]) < agent_radius_m * fos) {
-                if (cg_debug) std::printf("NODE TOO CLOSE TO OBSTACLE EDGE:\tNODE: (%f, %f)\tEDGE (%f, %f)-(%f, %f)\n",
+                if (debug) std::printf("NODE TOO CLOSE TO OBSTACLE EDGE:\tNODE: (%f, %f)\tEDGE (%f, %f)-(%f, %f)\n",
                                        node[0], node[1],
                                        obstacle_points[i][0],obstacle_points[i][1],
                                        obstacle_points[j][0],obstacle_points[j][1]);
@@ -186,9 +195,9 @@ bool node_test( state& node, std::vector<std::vector<state>> obstacles, float ag
         }
 
         // determine if node on/inside of polygon
-        if (cg_verbose) { std::printf("LEFT COUNT = %i of %i\n", left_count, obstacle_points.size()); } //TODO REMOVE
+        if (verbose) { std::printf("LEFT COUNT = %i of %i\n", left_count, obstacle_points.size()); } //TODO REMOVE
         if (left_count == obstacle_points.size()) {
-            if (cg_debug) std::printf("NODE INSIDE OBSTACLE:\tNODE: (%f, %f)\tOBSTACLE LEFT_ON %i\n",
+            if (debug) std::printf("NODE INSIDE OBSTACLE:\tNODE: (%f, %f)\tOBSTACLE LEFT_ON %i\n",
                                    node[0], node[1],
                                    left_count);
         }
@@ -206,21 +215,21 @@ bool edge_test( state& line_start, state& line_end, std::vector<std::vector<stat
             // determine adjacent vertex index with wraparound
             int j = (i == obstacle_points.size() - 1) ? 0 : i + 1;
 
-            if (cg_verbose) std::printf("OBSTACLE VERTEX TO EDGE TEST:\tOB VERTEX: (%f, %f)\tEDGE (%f, %f)-(%f, %f)\n",
+            if (verbose) std::printf("OBSTACLE VERTEX TO EDGE TEST:\tOB VERTEX: (%f, %f)\tEDGE (%f, %f)-(%f, %f)\n",
                                       obstacle_points[i][0], obstacle_points[i][0],
                                       line_start[0], line_start[1],
                                       line_end[0], line_end[1]);
 
             // check if potential edge is too lcose to specified obstacle point
             if (distance_to_line_segment(obstacle_points[i], line_start, line_end) < agent_radius_m * fos) {
-                if (cg_debug) std::printf("OBSTACLE VERTEX TOO CLOSE TO EDGE:\tOB VERTEX: (%f, %f)\tEDGE (%f, %f)-(%f, %f)\n",
+                if (debug) std::printf("OBSTACLE VERTEX TOO CLOSE TO EDGE:\tOB VERTEX: (%f, %f)\tEDGE (%f, %f)-(%f, %f)\n",
                                        obstacle_points[i][0], obstacle_points[i][0],
                                        line_start[0], line_start[1],
                                        line_end[0], line_end[1]);
                 return false;
             }
 
-            if (cg_verbose) std::printf("NODE EDGE INTERSECTION TEST:\t"
+            if (verbose) std::printf("NODE EDGE INTERSECTION TEST:\t"
                                       "NODE EDGE: (%f, %f)-(%f, %f)\t"
                                       "OBS EDGE: (%f, %f)-(%f, %f)\n",
                                       line_start[0], line_start[1],
@@ -230,7 +239,7 @@ bool edge_test( state& line_start, state& line_end, std::vector<std::vector<stat
 
             // check if intersection occuring between obstacle edge and nodes
             if (intersects(line_start, line_end, obstacle_points[i], obstacle_points[j])) {
-                if (cg_debug) std::printf("NODE EDGE INTERSECTS WITH OBSTACLE EDGE:\t"
+                if (debug) std::printf("NODE EDGE INTERSECTS WITH OBSTACLE EDGE:\t"
                                        "NODE EDGE: (%f, %f)-(%f, %f)\t"
                                        "OBS EDGE: (%f, %f)-(%f, %f)\n",
                                        line_start[0], line_start[1],
