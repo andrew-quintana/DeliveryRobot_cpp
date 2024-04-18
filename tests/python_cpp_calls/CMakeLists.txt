@@ -12,7 +12,8 @@ set(EXTERNAL_INCLUDE_DIR "/usr/local/include")
 add_library(apriltag SHARED IMPORTED GLOBAL)
 set_target_properties(apriltag PROPERTIES
     IMPORTED_LOCATION "${EXTERNAL_LIB_DIR}/libapriltag.so"
-    INTERFACE_INCLUDE_DIRECTORIES "/usr/local/include/")
+    INTERFACE_INCLUDE_DIRECTORIES "/usr/local/include/"
+)
 
 # Find the OpenCV libraries
 find_package(OpenCV REQUIRED COMPONENTS core imgproc)

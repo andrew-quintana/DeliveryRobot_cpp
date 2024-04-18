@@ -17,13 +17,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 66,
+				"line" : 70,
 				"parent" : 0
 			},
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 74,
+				"line" : 76,
 				"parent" : 0
 			}
 		]
@@ -62,14 +62,14 @@
 			"destination" : "include",
 			"paths" : 
 			[
-				"tests/python_cpp_calls/delivery_interface.h"
+				"cpp/include/DeliveryInterface.h"
 			],
 			"type" : "file"
 		},
 		{
 			"backtrace" : 2,
 			"component" : "Unspecified",
-			"destination" : "/pkgconfig",
+			"destination" : "share/pkgconfig",
 			"paths" : 
 			[
 				"build/delivery_interface.pc"

@@ -1,0 +1,11 @@
+prefix=/build
+exec_prefix=/cpp
+libdir=${exec_prefix}/src
+includedir=${exec_prefix}/include
+
+Name: delivery_interface
+Description: Python Interface for the Delivery Robot
+Version: 0.1.0
+Requires: opencv >= 4.5.0, eigen3 >= 3.3.7, apriltag >= 3.4.0, boost >= 1.85.0
+Libs: -L${libdir} -ldelivery_interface
+Cflags: -I${includedir}

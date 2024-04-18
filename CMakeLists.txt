@@ -1,8 +1,10 @@
 # Minimum version of CMake required to build this project
-cmake_minimum_required(VERSION 3.1)
+cmake_minimum_required(VERSION 3.9)
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Project's name, version, and language
-project(delivery_interface VERSION 1.0 LANGUAGES CXX)
+project(DeliveryRobot VERSION 1.0 LANGUAGES CXX)
 
 # Set the include directories
 set(EXTERNAL_LIB_DIR "/usr/local/lib")
@@ -12,14 +14,12 @@ set(EXTERNAL_INCLUDE_DIR "/usr/local/include")
 add_library(apriltag SHARED IMPORTED GLOBAL)
 set_target_properties(apriltag PROPERTIES
     IMPORTED_LOCATION "${EXTERNAL_LIB_DIR}/libapriltag.so"
-    INTERFACE_INCLUDE_DIRECTORIES "/usr/local/include/apriltag"
+    INTERFACE_INCLUDE_DIRECTORIES "${EXTERNAL_INCLUDE_DIR}"
 )
 
 # Find the OpenCV libraries
 find_package(OpenCV REQUIRED COMPONENTS core imgproc)
-if(OpenCV_FOUND)
-  include_directories("/usr/local/include/opencv4")
-endif()
+include_directories("/usr/local/include/opencv4")
 
 # Find the Boost library
 find_package(Boost REQUIRED COMPONENTS system)
@@ -29,57 +29,50 @@ include_directories(${Boost_INCLUDE_DIRS})
 find_package(GTest REQUIRED)
 include_directories(${GTEST_INCLUDE_DIRS})
 
+# Find the Eigen library
+find_package(Eigen3 REQUIRED)
+include_directories(${EIGEN3_INCLUDE_DIR})
+
+include_directories(
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
+    ${CMAKE_CURRENT_SOURCE_DIR}/cpp/include
+    ${EXTERNAL_INCLUDE_DIR}
+)
+
 # Add source files to create a shared library named 'delivery_interface'
 add_library(delivery_interface SHARED
-  cpp/src/DeliveryFSM.cpp
-  include/delivery_interface.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/cpp/src/DeliveryInterface.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/cpp/include/DeliveryInterface.h
+
 )
 
 # Set properties for the 'delivery_interface' target
 set_target_properties(delivery_interface PROPERTIES
-  # Set the version of the library to the project's version
   VERSION ${PROJECT_VERSION}
-  # Specify the public header file
-  PUBLIC_HEADER tests/python_cpp_calls/delivery_interface.h
+  PUBLIC_HEADER ${CMAKE_CURRENT_SOURCE_DIR}/cpp/include/DeliveryInterface.h
 )
+
+configure_file(delivery_interface.pc.in delivery_interface.pc @ONLY)
 
 # Link libraries to the shared library
-target_include_directories(delivery_interface
-  PRIVATE
-	apriltag
+target_link_libraries(delivery_interface PRIVATE
+    apriltag
     ${OpenCV_LIBS}
     ${Boost_LIBRARIES}
-	${GTEST_LIBRARIES}
-	${GTEST_MAIN_LIBRARIES}
-    ${CMAKE_CURRENT_SOURCE_DIR}/include
-    ${CMAKE_CURRENT_SOURCE_DIR}/cpp/include
+    ${GTEST_LIBRARIES}
+    ${GTEST_MAIN_LIBRARIES}
+    Eigen3::Eigen
 )
 
-# Find the Eigen library
-find_package(Eigen3 REQUIRED)
-if(EIGEN3_FOUND)
-  include_directories(${EIGEN3_INCLUDE_DIR})
-  target_link_libraries(delivery_interface PUBLIC Eigen3::Eigen)
-endif()
+
 
 # Install the 'delivery_interface' library
 install(TARGETS delivery_interface
-  # Specify the destination for the library file
   LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-  # Specify the destination for the public header file
   PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
 )
 
 # Install the 'delivery_interface.pc' file
 install(FILES ${CMAKE_BINARY_DIR}/delivery_interface.pc 
-  # Specify the destination for the 'delivery_interface.pc' file
   DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/pkgconfig
 )
-
-
-
-
-
-
-
-

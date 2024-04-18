@@ -30,29 +30,9 @@
 			"value" : "/usr/local/include"
 		},
 		{
-			"name" : "Boost_SYSTEM_LIBRARY_DEBUG",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Boost system library (debug)"
-				}
-			],
-			"type" : "FILEPATH",
-			"value" : "Boost_SYSTEM_LIBRARY_DEBUG-NOTFOUND"
-		},
-		{
 			"name" : "Boost_SYSTEM_LIBRARY_RELEASE",
 			"properties" : 
 			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
 				{
 					"name" : "HELPSTRING",
 					"value" : ""
@@ -590,6 +570,198 @@
 			"value" : "/home/jetbot/DeliveryRobot"
 		},
 		{
+			"name" : "CMAKE_INSTALL_BINDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "User executables (bin)"
+				}
+			],
+			"type" : "PATH",
+			"value" : "bin"
+		},
+		{
+			"name" : "CMAKE_INSTALL_DATADIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Read-only architecture-independent data (DATAROOTDIR)"
+				}
+			],
+			"type" : "PATH",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_INSTALL_DATAROOTDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Read-only architecture-independent data root (share)"
+				}
+			],
+			"type" : "PATH",
+			"value" : "share"
+		},
+		{
+			"name" : "CMAKE_INSTALL_DOCDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Documentation root (DATAROOTDIR/doc/PROJECT_NAME)"
+				}
+			],
+			"type" : "PATH",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_INSTALL_INCLUDEDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "C header files (include)"
+				}
+			],
+			"type" : "PATH",
+			"value" : "include"
+		},
+		{
+			"name" : "CMAKE_INSTALL_INFODIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Info documentation (DATAROOTDIR/info)"
+				}
+			],
+			"type" : "PATH",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_INSTALL_LIBDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Object code libraries (lib)"
+				}
+			],
+			"type" : "PATH",
+			"value" : "lib"
+		},
+		{
+			"name" : "CMAKE_INSTALL_LIBEXECDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Program executables (libexec)"
+				}
+			],
+			"type" : "PATH",
+			"value" : "libexec"
+		},
+		{
+			"name" : "CMAKE_INSTALL_LOCALEDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Locale-dependent data (DATAROOTDIR/locale)"
+				}
+			],
+			"type" : "PATH",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_INSTALL_LOCALSTATEDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Modifiable single-machine data (var)"
+				}
+			],
+			"type" : "PATH",
+			"value" : "var"
+		},
+		{
+			"name" : "CMAKE_INSTALL_MANDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Man documentation (DATAROOTDIR/man)"
+				}
+			],
+			"type" : "PATH",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_INSTALL_OLDINCLUDEDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "C header files for non-gcc (/usr/include)"
+				}
+			],
+			"type" : "PATH",
+			"value" : "/usr/include"
+		},
+		{
 			"name" : "CMAKE_INSTALL_PREFIX",
 			"properties" : 
 			[
@@ -602,6 +774,54 @@
 			"value" : "/usr/local"
 		},
 		{
+			"name" : "CMAKE_INSTALL_RUNSTATEDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Run-time variable data (LOCALSTATEDIR/run)"
+				}
+			],
+			"type" : "PATH",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_INSTALL_SBINDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "System admin executables (sbin)"
+				}
+			],
+			"type" : "PATH",
+			"value" : "sbin"
+		},
+		{
+			"name" : "CMAKE_INSTALL_SHAREDSTATEDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Modifiable architecture-independent data (com)"
+				}
+			],
+			"type" : "PATH",
+			"value" : "com"
+		},
+		{
 			"name" : "CMAKE_INSTALL_SO_NO_EXE",
 			"properties" : 
 			[
@@ -612,6 +832,22 @@
 			],
 			"type" : "INTERNAL",
 			"value" : "1"
+		},
+		{
+			"name" : "CMAKE_INSTALL_SYSCONFDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Read-only single-machine data (etc)"
+				}
+			],
+			"type" : "PATH",
+			"value" : "etc"
 		},
 		{
 			"name" : "CMAKE_LINKER",
@@ -831,7 +1067,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "delivery_interface"
+			"value" : "DeliveryRobot"
 		},
 		{
 			"name" : "CMAKE_PROJECT_VERSION",
@@ -1174,6 +1410,90 @@
 			"value" : "FALSE"
 		},
 		{
+			"name" : "DeliveryFSM_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/home/jetbot/DeliveryRobot/build"
+		},
+		{
+			"name" : "DeliveryFSM_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "ON"
+		},
+		{
+			"name" : "DeliveryFSM_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;apriltag;general;opencv_core;general;opencv_imgproc;general;Boost::system;general;/usr/local/lib/libgtest.a;general;/usr/local/lib/libgtest_main.a;"
+		},
+		{
+			"name" : "DeliveryFSM_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/home/jetbot/DeliveryRobot"
+		},
+		{
+			"name" : "DeliveryRobot_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/home/jetbot/DeliveryRobot/build"
+		},
+		{
+			"name" : "DeliveryRobot_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "ON"
+		},
+		{
+			"name" : "DeliveryRobot_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/home/jetbot/DeliveryRobot"
+		},
+		{
 			"name" : "Eigen3_DIR",
 			"properties" : 
 			[
@@ -1207,7 +1527,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "[/usr/local/lib/libgtest.a][/usr/include][/usr/local/lib/libgtest_main.a][v()]"
+			"value" : "[/usr/local/lib/libgtest.a][/usr/local/include][/usr/local/lib/libgtest_main.a][v()]"
 		},
 		{
 			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_OpenCV",
@@ -1220,18 +1540,6 @@
 			],
 			"type" : "INTERNAL",
 			"value" : "[/usr/local][cfound components: core imgproc ][v4.9.0()]"
-		},
-		{
-			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_Threads",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Details about finding Threads"
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : "[TRUE][v()]"
 		},
 		{
 			"name" : "GMOCK_LIBRARY",
@@ -1311,7 +1619,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/usr/include"
+			"value" : "/usr/local/include"
 		},
 		{
 			"name" : "GTEST_LIBRARY",
@@ -1414,40 +1722,16 @@
 			"value" : "TRUE"
 		},
 		{
-			"name" : "apriltag_DIR",
+			"name" : "_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX",
 			"properties" : 
 			[
 				{
 					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for apriltag."
+					"value" : "CMAKE_INSTALL_PREFIX during last run"
 				}
 			],
-			"type" : "PATH",
-			"value" : "/usr/local/share/apriltag/cmake"
-		},
-		{
-			"name" : "boost_assert_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for boost_assert."
-				}
-			],
-			"type" : "PATH",
-			"value" : "/usr/local/lib/cmake/boost_assert-1.84.0"
-		},
-		{
-			"name" : "boost_config_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for boost_config."
-				}
-			],
-			"type" : "PATH",
-			"value" : "/usr/local/lib/cmake/boost_config-1.84.0"
+			"type" : "INTERNAL",
+			"value" : "/usr/local"
 		},
 		{
 			"name" : "boost_headers_DIR",
@@ -1466,30 +1750,6 @@
 			"value" : "/usr/local/lib/cmake/boost_headers-1.86.0"
 		},
 		{
-			"name" : "boost_mp11_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for boost_mp11."
-				}
-			],
-			"type" : "PATH",
-			"value" : "/usr/local/lib/cmake/boost_mp11-1.84.0"
-		},
-		{
-			"name" : "boost_predef_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for boost_predef."
-				}
-			],
-			"type" : "PATH",
-			"value" : "/usr/local/lib/cmake/boost_predef-1.84.0"
-		},
-		{
 			"name" : "boost_system_DIR",
 			"properties" : 
 			[
@@ -1506,103 +1766,7 @@
 			"value" : "/usr/local/lib/cmake/boost_system-1.86.0"
 		},
 		{
-			"name" : "boost_throw_exception_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for boost_throw_exception."
-				}
-			],
-			"type" : "PATH",
-			"value" : "/usr/local/lib/cmake/boost_throw_exception-1.84.0"
-		},
-		{
-			"name" : "boost_variant2_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for boost_variant2."
-				}
-			],
-			"type" : "PATH",
-			"value" : "/usr/local/lib/cmake/boost_variant2-1.84.0"
-		},
-		{
-			"name" : "boost_winapi_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for boost_winapi."
-				}
-			],
-			"type" : "PATH",
-			"value" : "/usr/local/lib/cmake/boost_winapi-1.84.0"
-		},
-		{
-			"name" : "delivery_interface_BINARY_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "/home/jetbot/DeliveryRobot/build"
-		},
-		{
-			"name" : "delivery_interface_IS_TOP_LEVEL",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "ON"
-		},
-		{
-			"name" : "delivery_interface_SOURCE_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "/home/jetbot/DeliveryRobot"
-		},
-		{
-			"name" : "mylib_BINARY_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "/home/jetbot/DeliveryRobot/build"
-		},
-		{
-			"name" : "mylib_IS_TOP_LEVEL",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "ON"
-		},
-		{
-			"name" : "mylib_LIB_DEPENDS",
+			"name" : "delivery_interface_LIB_DEPENDS",
 			"properties" : 
 			[
 				{
@@ -1611,19 +1775,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "general;apriltag;general;opencv_core;general;opencv_imgproc;general;GTest::gtest;general;GTest::gtest_main;"
-		},
-		{
-			"name" : "mylib_SOURCE_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "/home/jetbot/DeliveryRobot"
+			"value" : "general;apriltag;general;opencv_core;general;opencv_imgproc;general;Boost::system;general;/usr/local/lib/libgtest.a;general;/usr/local/lib/libgtest_main.a;"
 		}
 	],
 	"kind" : "cache",

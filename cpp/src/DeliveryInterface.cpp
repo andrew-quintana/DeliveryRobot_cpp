@@ -3,7 +3,7 @@
 //
 
 #include "DeliveryInterface.h"
-#include "fsm.h"
+#include "delivery_interface.h"
 
 std::string step_fsm( std::string img_path ) {
     // determine INFO enum for updating FSM state and output string for python interpreter
@@ -20,7 +20,6 @@ std::string step_fsm( std::string img_path ) {
             slam = new OnlineSLAM(3);
             nav = new Astar( beam_resolution, max_distance, heuristic_weight,
                                 cost, fos, robot_radius);
-            robot = new RobotSim(max_distance, velocity_m_s, angular_velocity_rad_s);
 
             // initialize variables
             goal_state.setZero();

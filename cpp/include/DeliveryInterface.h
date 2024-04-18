@@ -9,6 +9,7 @@
 
 #include <map>
 #include <queue>
+#include <string>
 
 // ------------------------- AVAILABLE FOR DEBUGGING --------------------------
 bool debug = true;
@@ -40,8 +41,8 @@ struct Log {
 
 // ---------------------------- OBJECT DECLARATION ----------------------------
 // state machine
-DeliveryFSM fsm = *new DeliveryFSM();
-MachineState machine_state = fsm.get_machine_state;
+DeliveryFSM* fsm = new DeliveryFSM();
+MachineState machine_state = fsm.get_machine_state();
 INFO next_info;
 INFO measure_output;
 Log log;
@@ -69,7 +70,6 @@ std::string window_name = "Radar";
 Mapping* mapping;
 
 // robot AND/OR simulator
-RobotSim* robot;
 float velocity_m_s = 5;
 float angular_velocity_rad_s = 5;
 
@@ -100,6 +100,7 @@ bool orth = false;
 
 // ---------------------------- FUNCTION DECLARATION ----------------------------
 INFO robot_measure( std::string img_path );
+std::string step_fsm( std::string img_path )
 void set_goal_state();
 void process_obstacles( std::vector<std::vector<state>>& obstacle_states_set );
 Log update_log();

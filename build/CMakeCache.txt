@@ -20,9 +20,6 @@ Boost_DIR:PATH=/usr/local/lib/cmake/Boost-1.86.0
 //Path to a file.
 Boost_INCLUDE_DIR:PATH=/usr/local/include
 
-//Boost system library (debug)
-Boost_SYSTEM_LIBRARY_DEBUG:FILEPATH=Boost_SYSTEM_LIBRARY_DEBUG-NOTFOUND
-
 Boost_SYSTEM_LIBRARY_RELEASE:STRING=/usr/local/lib/libboost_system.so.1.86.0
 
 //Path to a program.
@@ -88,8 +85,56 @@ CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=
 //Value Computed by CMake.
 CMAKE_FIND_PACKAGE_REDIRECTS_DIR:STATIC=/home/jetbot/DeliveryRobot/build/CMakeFiles/pkgRedirects
 
+//User executables (bin)
+CMAKE_INSTALL_BINDIR:PATH=bin
+
+//Read-only architecture-independent data (DATAROOTDIR)
+CMAKE_INSTALL_DATADIR:PATH=
+
+//Read-only architecture-independent data root (share)
+CMAKE_INSTALL_DATAROOTDIR:PATH=share
+
+//Documentation root (DATAROOTDIR/doc/PROJECT_NAME)
+CMAKE_INSTALL_DOCDIR:PATH=
+
+//C header files (include)
+CMAKE_INSTALL_INCLUDEDIR:PATH=include
+
+//Info documentation (DATAROOTDIR/info)
+CMAKE_INSTALL_INFODIR:PATH=
+
+//Object code libraries (lib)
+CMAKE_INSTALL_LIBDIR:PATH=lib
+
+//Program executables (libexec)
+CMAKE_INSTALL_LIBEXECDIR:PATH=libexec
+
+//Locale-dependent data (DATAROOTDIR/locale)
+CMAKE_INSTALL_LOCALEDIR:PATH=
+
+//Modifiable single-machine data (var)
+CMAKE_INSTALL_LOCALSTATEDIR:PATH=var
+
+//Man documentation (DATAROOTDIR/man)
+CMAKE_INSTALL_MANDIR:PATH=
+
+//C header files for non-gcc (/usr/include)
+CMAKE_INSTALL_OLDINCLUDEDIR:PATH=/usr/include
+
 //Install path prefix, prepended onto install directories.
 CMAKE_INSTALL_PREFIX:PATH=/usr/local
+
+//Run-time variable data (LOCALSTATEDIR/run)
+CMAKE_INSTALL_RUNSTATEDIR:PATH=
+
+//System admin executables (sbin)
+CMAKE_INSTALL_SBINDIR:PATH=sbin
+
+//Modifiable architecture-independent data (com)
+CMAKE_INSTALL_SHAREDSTATEDIR:PATH=com
+
+//Read-only single-machine data (etc)
+CMAKE_INSTALL_SYSCONFDIR:PATH=etc
 
 //Path to a program.
 CMAKE_LINKER:FILEPATH=/usr/bin/ld
@@ -133,7 +178,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=delivery_interface
+CMAKE_PROJECT_NAME:STATIC=DeliveryRobot
 
 //Value Computed by CMake
 CMAKE_PROJECT_VERSION:STATIC=1.0
@@ -212,6 +257,27 @@ CMAKE_STRIP:FILEPATH=/usr/bin/strip
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
+//Value Computed by CMake
+DeliveryFSM_BINARY_DIR:STATIC=/home/jetbot/DeliveryRobot/build
+
+//Value Computed by CMake
+DeliveryFSM_IS_TOP_LEVEL:STATIC=ON
+
+//Dependencies for the target
+DeliveryFSM_LIB_DEPENDS:STATIC=general;apriltag;general;opencv_core;general;opencv_imgproc;general;Boost::system;general;/usr/local/lib/libgtest.a;general;/usr/local/lib/libgtest_main.a;
+
+//Value Computed by CMake
+DeliveryFSM_SOURCE_DIR:STATIC=/home/jetbot/DeliveryRobot
+
+//Value Computed by CMake
+DeliveryRobot_BINARY_DIR:STATIC=/home/jetbot/DeliveryRobot/build
+
+//Value Computed by CMake
+DeliveryRobot_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+DeliveryRobot_SOURCE_DIR:STATIC=/home/jetbot/DeliveryRobot
+
 //The directory containing a CMake configuration file for Eigen3.
 Eigen3_DIR:PATH=/usr/lib/cmake/eigen3
 
@@ -228,7 +294,7 @@ GMOCK_MAIN_LIBRARY:FILEPATH=GMOCK_MAIN_LIBRARY-NOTFOUND
 GMOCK_MAIN_LIBRARY_DEBUG:FILEPATH=GMOCK_MAIN_LIBRARY_DEBUG-NOTFOUND
 
 //Path to a file.
-GTEST_INCLUDE_DIR:PATH=/usr/include
+GTEST_INCLUDE_DIR:PATH=/usr/local/include
 
 //Path to a library.
 GTEST_LIBRARY:FILEPATH=/usr/local/lib/libgtest.a
@@ -248,56 +314,14 @@ GTest_DIR:PATH=GTest_DIR-NOTFOUND
 //The directory containing a CMake configuration file for OpenCV.
 OpenCV_DIR:PATH=/usr/local/lib/cmake/opencv4
 
-//The directory containing a CMake configuration file for apriltag.
-apriltag_DIR:PATH=/usr/local/share/apriltag/cmake
-
-//The directory containing a CMake configuration file for boost_assert.
-boost_assert_DIR:PATH=/usr/local/lib/cmake/boost_assert-1.84.0
-
-//The directory containing a CMake configuration file for boost_config.
-boost_config_DIR:PATH=/usr/local/lib/cmake/boost_config-1.84.0
-
 //The directory containing a CMake configuration file for boost_headers.
 boost_headers_DIR:PATH=/usr/local/lib/cmake/boost_headers-1.86.0
-
-//The directory containing a CMake configuration file for boost_mp11.
-boost_mp11_DIR:PATH=/usr/local/lib/cmake/boost_mp11-1.84.0
-
-//The directory containing a CMake configuration file for boost_predef.
-boost_predef_DIR:PATH=/usr/local/lib/cmake/boost_predef-1.84.0
 
 //The directory containing a CMake configuration file for boost_system.
 boost_system_DIR:PATH=/usr/local/lib/cmake/boost_system-1.86.0
 
-//The directory containing a CMake configuration file for boost_throw_exception.
-boost_throw_exception_DIR:PATH=/usr/local/lib/cmake/boost_throw_exception-1.84.0
-
-//The directory containing a CMake configuration file for boost_variant2.
-boost_variant2_DIR:PATH=/usr/local/lib/cmake/boost_variant2-1.84.0
-
-//The directory containing a CMake configuration file for boost_winapi.
-boost_winapi_DIR:PATH=/usr/local/lib/cmake/boost_winapi-1.84.0
-
-//Value Computed by CMake
-delivery_interface_BINARY_DIR:STATIC=/home/jetbot/DeliveryRobot/build
-
-//Value Computed by CMake
-delivery_interface_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-delivery_interface_SOURCE_DIR:STATIC=/home/jetbot/DeliveryRobot
-
-//Value Computed by CMake
-mylib_BINARY_DIR:STATIC=/home/jetbot/DeliveryRobot/build
-
-//Value Computed by CMake
-mylib_IS_TOP_LEVEL:STATIC=ON
-
 //Dependencies for the target
-mylib_LIB_DEPENDS:STATIC=general;apriltag;general;opencv_core;general;opencv_imgproc;general;GTest::gtest;general;GTest::gtest_main;
-
-//Value Computed by CMake
-mylib_SOURCE_DIR:STATIC=/home/jetbot/DeliveryRobot
+delivery_interface_LIB_DEPENDS:STATIC=general;apriltag;general;opencv_core;general;opencv_imgproc;general;Boost::system;general;/usr/local/lib/libgtest.a;general;/usr/local/lib/libgtest_main.a;
 
 
 ########################
@@ -306,10 +330,6 @@ mylib_SOURCE_DIR:STATIC=/home/jetbot/DeliveryRobot
 
 //ADVANCED property for variable: Boost_DIR
 Boost_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: Boost_SYSTEM_LIBRARY_DEBUG
-Boost_SYSTEM_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: Boost_SYSTEM_LIBRARY_RELEASE
-Boost_SYSTEM_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_ADDR2LINE
 CMAKE_ADDR2LINE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_AR
@@ -383,8 +403,40 @@ CMAKE_HAVE_PTHREAD_CREATE:INTERNAL=1
 //Source directory with the top level CMakeLists.txt file for this
 // project
 CMAKE_HOME_DIRECTORY:INTERNAL=/home/jetbot/DeliveryRobot
+//ADVANCED property for variable: CMAKE_INSTALL_BINDIR
+CMAKE_INSTALL_BINDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_DATADIR
+CMAKE_INSTALL_DATADIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_DATAROOTDIR
+CMAKE_INSTALL_DATAROOTDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_DOCDIR
+CMAKE_INSTALL_DOCDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_INCLUDEDIR
+CMAKE_INSTALL_INCLUDEDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_INFODIR
+CMAKE_INSTALL_INFODIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_LIBDIR
+CMAKE_INSTALL_LIBDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_LIBEXECDIR
+CMAKE_INSTALL_LIBEXECDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_LOCALEDIR
+CMAKE_INSTALL_LOCALEDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_LOCALSTATEDIR
+CMAKE_INSTALL_LOCALSTATEDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_MANDIR
+CMAKE_INSTALL_MANDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_OLDINCLUDEDIR
+CMAKE_INSTALL_OLDINCLUDEDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_RUNSTATEDIR
+CMAKE_INSTALL_RUNSTATEDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_SBINDIR
+CMAKE_INSTALL_SBINDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_SHAREDSTATEDIR
+CMAKE_INSTALL_SHAREDSTATEDIR-ADVANCED:INTERNAL=1
 //Install .so files without execute permission.
 CMAKE_INSTALL_SO_NO_EXE:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_SYSCONFDIR
+CMAKE_INSTALL_SYSCONFDIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_LINKER
 CMAKE_LINKER-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_MAKE_PROGRAM
@@ -448,11 +500,9 @@ CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Details about finding Boost
 FIND_PACKAGE_MESSAGE_DETAILS_Boost:INTERNAL=[/usr/local/lib/cmake/Boost-1.86.0/BoostConfig.cmake][cfound components: system ][v1.86.0()]
 //Details about finding GTest
-FIND_PACKAGE_MESSAGE_DETAILS_GTest:INTERNAL=[/usr/local/lib/libgtest.a][/usr/include][/usr/local/lib/libgtest_main.a][v()]
+FIND_PACKAGE_MESSAGE_DETAILS_GTest:INTERNAL=[/usr/local/lib/libgtest.a][/usr/local/include][/usr/local/lib/libgtest_main.a][v()]
 //Details about finding OpenCV
 FIND_PACKAGE_MESSAGE_DETAILS_OpenCV:INTERNAL=[/usr/local][cfound components: core imgproc ][v4.9.0()]
-//Details about finding Threads
-FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 //ADVANCED property for variable: GMOCK_LIBRARY
 GMOCK_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: GMOCK_LIBRARY_DEBUG
@@ -473,6 +523,8 @@ GTEST_MAIN_LIBRARY-ADVANCED:INTERNAL=1
 GTEST_MAIN_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //linker supports push/pop state
 _CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED:INTERNAL=TRUE
+//CMAKE_INSTALL_PREFIX during last run
+_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=/usr/local
 //ADVANCED property for variable: boost_headers_DIR
 boost_headers_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: boost_system_DIR

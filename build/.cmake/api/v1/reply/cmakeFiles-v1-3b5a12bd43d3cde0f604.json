@@ -233,6 +233,9 @@
 		{
 			"isExternal" : true,
 			"path" : "/usr/lib/cmake/eigen3/Eigen3Targets.cmake"
+		},
+		{
+			"path" : "delivery_interface.pc.in"
 		}
 	],
 	"kind" : "cmakeFiles",
