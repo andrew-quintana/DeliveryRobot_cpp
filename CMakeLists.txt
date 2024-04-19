@@ -11,18 +11,16 @@ set(EXTERNAL_LIB_DIR "/usr/local/lib")
 set(EXTERNAL_INCLUDE_DIR "/usr/local/include")
 
 # Find the AprilTag library
-add_library(apriltag SHARED IMPORTED GLOBAL)
-set_target_properties(apriltag PROPERTIES
-    IMPORTED_LOCATION "${EXTERNAL_LIB_DIR}/libapriltag.so"
-    INTERFACE_INCLUDE_DIRECTORIES "${EXTERNAL_INCLUDE_DIR}"
-)
+#add_library(apriltag SHARED IMPORTED GLOBAL)
+find_package(apriltag REQUIRED)
+include_directories(${apriltag_INCLUDE_DIRS})
 
 # Find the OpenCV libraries
-find_package(OpenCV REQUIRED COMPONENTS core imgproc)
+find_package(OpenCV REQUIRED)
 include_directories("/usr/local/include/opencv4")
 
 # Find the Boost library
-find_package(Boost REQUIRED COMPONENTS system)
+find_package(Boost REQUIRED)
 include_directories(${Boost_INCLUDE_DIRS})
 
 # Find the GTest library
@@ -43,6 +41,20 @@ include_directories(
 add_library(delivery_interface SHARED
     ${CMAKE_CURRENT_SOURCE_DIR}/cpp/src/DeliveryFSM.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/cpp/include/DeliveryFSM.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/cpp/src/AprilTagSensor.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/cpp/include/AprilTagSensor.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/cpp/src/BoostGraph.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/cpp/include/BoostGraph.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/cpp/src/CameraCalibration.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/cpp/include/CameraCalibration.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/cpp/src/ComputationalGeometry.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/cpp/include/ComputationalGeometry.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/cpp/src/Mapper.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/cpp/include/Mapper.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/cpp/src/OnlineSLAM.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/cpp/include/OnlineSLAM.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/cpp/src/Utilities.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/cpp/include/Utilities.h
 
 )
 
@@ -56,15 +68,14 @@ configure_file(delivery_interface.pc.in delivery_interface.pc @ONLY)
 
 # Link libraries to the shared library
 target_link_libraries(delivery_interface PRIVATE
-    apriltag
+    #apriltag
+    ${AprilTag_LIBRARIES}
     ${OpenCV_LIBS}
     ${Boost_LIBRARIES}
     ${GTEST_LIBRARIES}
     ${GTEST_MAIN_LIBRARIES}
     Eigen3::Eigen
 )
-
-
 
 # Install the 'delivery_interface' library
 install(TARGETS delivery_interface

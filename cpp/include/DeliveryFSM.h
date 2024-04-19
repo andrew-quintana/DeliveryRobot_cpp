@@ -7,12 +7,13 @@
 
 #pragma once
 
+#include "Utilities.h"
 #include "AprilTagSensor.h"
 #include "Astar.h"
 #include "ComputationalGeometry.h"
 #include "Mapper.h"
 #include "OnlineSLAM.h"
-#include "Utilities.h"
+
 
 #include <map>
 #include <array>
@@ -72,11 +73,12 @@ private:
     // ---------------------------- OBJECT DECLARATION ----------------------------
     // state machine
     INFO next_info;
+    std::string output;
     INFO measure_output;
-    Log log;
 
     // apriltag
     AprilTagSensor* sensor;
+    std::string cal_DIR = "docs/calibration";
 
     // slam algorithm - onlineslam
     OnlineSLAM* slam;
@@ -103,7 +105,7 @@ private:
 
     // ---------------------------- VARIABLE DECLARATION ----------------------------
     int goal_idx = 0;
-    std::queue<int> goal_ids = {1, 2};    // TODO need method of iterating through goals and passing/updating
+	std::queue<int> goal_ids;		// TODO need method of iterating through goals and passing/updating
     state goal_state;
     env measurements;
     std::vector<std::string> obstacle_ids = {"8"};
@@ -128,7 +130,7 @@ private:
     // ---------------------------- FUNCTION DECLARATION ----------------------------
     void set_goal_state();
     void print_log();
-    Log update_log();
+    void update_log();
 
     void command_next(INFO next = INFO::NA );
     INFO robot_measure( std::string img_path );
@@ -148,8 +150,8 @@ public:
 
 };
 
-std::string info_str( INFO info );
-std::string machine_state_str( MachineState ms );
-std::string scan_state_str( ScanState ss );
+const char* info_str( INFO info );
+const char* machine_state_str( MachineState ms );
+const char* scan_state_str( ScanState ss );
 
 #endif //DELIVERYFSM_H

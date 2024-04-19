@@ -4,6 +4,7 @@ import os
 
 # Load the shared library
 os.chdir('/workspace/DeliveryRobot/build')
+print(os.listdir())
 lib = ctypes.CDLL('libdelivery_interface.so')
 
 # Set return type of the step_fsm() function

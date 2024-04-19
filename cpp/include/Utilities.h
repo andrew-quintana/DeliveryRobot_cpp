@@ -5,8 +5,6 @@
 #ifndef UTILITIES_H
 #define UTILITIES_H
 
-#include "DeliveryFSM.h"
-
 #include <iostream>
 #include <cstdio>
 #include <string>
@@ -33,7 +31,8 @@ enum class INFO {
     AT_GOAL,
     NOT_AT_GOAL,
     ERROR,
-    NA
+    NA,
+    UNKNOWN
 };
 
 typedef Eigen::Vector3f state;

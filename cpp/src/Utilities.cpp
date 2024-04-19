@@ -77,30 +77,6 @@ bool approximatelyEqual(float a, float b, float tolerance) {
     return std::abs(a - b) <= tolerance;
 }
 
-std::string format_string(const char* format, ...) {
-    char buffer[256]; // Adjust the buffer size as needed
-    va_list args;
-    va_start(args, format);
-    std::vsprintf(buffer, format, args);
-    va_end(args);
-    return std::string(buffer);
-}
-
-void status_update( int hyphen_sets, const char* format, ...) {
-    va_list args;
-    va_start(args, format);
-    std::string str = format_string(format, args);
-    std::string hyphens = "- - - - - ";
-    std::string prefix;
-    for (int i = 0; i < hyphen_sets; ++i) {
-        prefix += hyphens;
-    }
-    std::printf("\n%s - %s %s - - - - - - - - - - - - - - -\n",
-                timestamp().c_str(),
-                prefix.c_str(),
-                str.c_str());
-}
-
 std::string timestamp() {
     std::time_t now = std::time(0);
     std::tm* timeinfo = std::localtime(&now);

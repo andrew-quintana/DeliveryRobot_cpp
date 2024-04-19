@@ -9,7 +9,6 @@
 #include <string.h>
 #include <iostream>
 #include <cmath>
-#include <format>
 #include <vector>
 #include <map>
 
@@ -26,7 +25,10 @@ void coord_text(Mat& image, int color[3], std::string id, float c_x, float c_y, 
     int img_cy = image.rows/2;
 
     // Define the text to be displayed
-    std::string text = format("%s (%0.3f,%0.3f,%0.3f)", id.c_str(), c_x, -c_y, psi);
+    std::string text = id + " (" +
+						std::to_string(c_x) + "," +
+						std::to_string(-c_y) + "," +
+						std::to_string(psi) + ")";
 
     // Define the font properties
     int fontFace = cv::FONT_HERSHEY_COMPLEX_SMALL;

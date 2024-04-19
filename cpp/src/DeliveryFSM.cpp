@@ -5,7 +5,10 @@
 #include "DeliveryFSM.h"
 
 // -------------------------------- CONSTRUCTOR/DECONSTRUCTOR ----------------------------------
-DeliveryFSM::DeliveryFSM() {}
+DeliveryFSM::DeliveryFSM() {
+	goal_ids.push(1);
+	goal_ids.push(2);
+}
 DeliveryFSM::~DeliveryFSM() {}
 
 // ---------------------------- GETTERS/SETTERS/UPDATERS/PRINTERS ----------------------------
@@ -14,17 +17,17 @@ MachineState DeliveryFSM::get_machine_state() { return machine_state; }
 
 ScanState DeliveryFSM::get_scan_state() { return scan_state; }
 
-void set_goal_state() {
-    if (measurements.count(goal_idx) > 0) {
+void DeliveryFSM::set_goal_state() {
+    if (measurements.count(std::to_string(goal_idx)) > 0) {
         goal_state = measurements[std::to_string(goal_idx)];
     }
     else {
-        printf("WARNING: UNABLE TO SET ")
+        printf("WARNING: UNABLE TO SET ");
     }
     
 }
 
-std::string info_str( INFO info ) {
+const char* info_str( INFO info ) {
     switch (info) {
         case INFO::GOAL_FOUND:                  return "GOAL_FOUND";
         case INFO::GOAL_NOT_FOUND:              return "GOAL_NOT_FOUND";
@@ -36,7 +39,7 @@ std::string info_str( INFO info ) {
     }
 }
 
-std::string machine_state_str( MachineState ms ) {
+const char* machine_state_str( MachineState ms ) {
     switch (ms) {
         case MachineState::INITIALIZE:          return "INITIALIZE";
         case MachineState::SCAN:                return "SCAN";
@@ -48,7 +51,7 @@ std::string machine_state_str( MachineState ms ) {
     }
 }
 
-std::string scan_state_str( ScanState ss ) {
+const char* scan_state_str( ScanState ss ) {
     switch (ss) {
         case ScanState::ROTATE:                 return "ROTATE";
         case ScanState::POV_MOVE:               return "POV_MOVE";
@@ -58,8 +61,8 @@ std::string scan_state_str( ScanState ss ) {
 }
 
 
-Log DeliveryFSM::update_log() {
-    cycle++;
+void DeliveryFSM::update_log() {
+    log.cycle++;
 
     // current states
     log.machine_current = log.machine_next;
@@ -70,8 +73,8 @@ Log DeliveryFSM::update_log() {
     log.request = output;
 
     // next_states
-    log.machine_next = fsm.get_machine_state();
-    log.scan_next = fsm.get_scan_state();
+    log.machine_next = get_machine_state();
+    log.scan_next = get_scan_state();
 
     // mapping
     log.robot = robot_state;
@@ -82,42 +85,44 @@ Log DeliveryFSM::update_log() {
     log.tag8 = measurements["8"];
 }
 
-Log print_log() {
-    printf("PRINTING LOG FOR CYLCE {}", cycle);
+void DeliveryFSM::print_log() {
+    printf("PRINTING LOG FOR CYLCE %i", log.cycle);
 
     // current states
     printf("\tCURRENT STATES:");
-    printf("\t\tMACHINE STATE: {}", machine_state_str(log.machine_current));
-    printf("\t\tSCAN STATE: {}", machine_state_str(log.scan_current));
+    printf("\t\tMACHINE STATE: %s", machine_state_str(log.machine_current));
+    printf("\t\tSCAN STATE: %s", scan_state_str(log.scan_current));
 
     // decision making
     printf("\tDECISION MAKING:");
-    printf("\t\tCOMMAND INFO: {}", log.fsm_info);
-    printf("\t\tREQUEST: {}", log.request);
+    printf("\t\tCOMMAND INFO: %s", info_str(log.fsm_info));
+    printf("\t\tREQUEST: %s", log.request.c_str());
 
     // next states
     printf("\tNEXT STATES:");
-    printf("\t\tMACHINE STATE: {}", machine_state_str(log.machine_next));
-    printf("\t\tSCAN STATE: {}", machine_state_str(log.scan_next));
+    printf("\t\tMACHINE STATE: %s", machine_state_str(log.machine_next));
+    printf("\t\tSCAN STATE: %s", scan_state_str(log.scan_next));
     
     // mapping
     printf("\tMAPPING:");
-    printf("\t\tROBOT STATE: x: {}, y: {}, th: {}", log.robot[0], log.robot[1], log.robot[2]);
-    printf("\t\tGOAL STATE ({}): x: {}, y: {}, th: {}", log.idx, log.robot[0], log.robot[1], log.robot[2]);
-    printf("\t\tTAG1 STATE: x: {}, y: {}, th: {}", log.tag1[0], log.tag1[1], log.tag1[2]);
-    printf("\t\tTAG2 STATE: x: {}, y: {}, th: {}", log.tag2[0], log.tag2[1], log.tag2[2]);
-    printf("\t\tTAG8 STATE: x: {}, y: {}, th: {}", log.tag8[0], log.tag8[1], log.tag8[2]);
+    printf("\t\tROBOT STATE: x: %f, y: %f, th: %f", log.robot[0], log.robot[1], log.robot[2]);
+    printf("\t\tGOAL STATE (%f): x: %f, y: %f, th: %f", log.idx, log.robot[0], log.robot[1], log.robot[2]);
+    printf("\t\tTAG1 STATE: x: %f, y: %f, th: %f", log.tag1[0], log.tag1[1], log.tag1[2]);
+    printf("\t\tTAG2 STATE: x: %f, y: %f, th: %f", log.tag2[0], log.tag2[1], log.tag2[2]);
+    printf("\t\tTAG8 STATE: x: %f, y: %f, th: %f", log.tag8[0], log.tag8[1], log.tag8[2]);
 
 }
 
 // ---------------------------------------- FSM FUNCTIONS ----------------------------------------
 
 
-std::string DelieryFSM::step_fsm( std::string img_path ) {
+std::string DeliveryFSM::step_fsm( std::string img_path ) {
     // determine INFO enum for updating FSM state and output string for python interpreter
 
     // every single run should measure from the most recent picture
-    if (fsm.get_machine_state != MachineState::INITIALIZE) { measure_output = robot_measure(img_path); }
+    output = "unknown -1 -1";
+    measure_output = INFO::UNKNOWN;
+    if (machine_state != MachineState::INITIALIZE) { measure_output = robot_measure(img_path); }
     if (measure_output == INFO::ERROR) { command_next(measure_output); return "error 0 0"; }
 
     switch (machine_state) {
@@ -133,7 +138,7 @@ std::string DelieryFSM::step_fsm( std::string img_path ) {
             goal_state.setZero();
 
             next_info = INFO::NA;
-            output = "na 0 0"
+            output = "na 0 0";
 
             break;
 
@@ -144,7 +149,7 @@ std::string DelieryFSM::step_fsm( std::string img_path ) {
             * whether or not the robot was appraoching a tag or a pov, returning to
             * the scanning step if so.
             */
-            switch (fsm.get_scan_state()) {
+            switch (get_scan_state()) {
                 case ScanState::ROTATE:
                     // rotate at current position to try to identify the location of the target tag
 
@@ -155,7 +160,10 @@ std::string DelieryFSM::step_fsm( std::string img_path ) {
                         output = "wait 0 0";
                     }
                     else {
-                        output = std::format("move {} {}", 0, angle_interval_rad);
+                        output = "move " +
+									std::to_string(0) +
+									" " +
+									std::to_string(angle_interval_rad);
                     }
 
                     next_info = measure_output;
@@ -174,7 +182,7 @@ std::string DelieryFSM::step_fsm( std::string img_path ) {
                     // check if at goal in process of navigating POVs
                     else if (euclidian(robot_state, goal_state) <= max_distance * fos)
                     {
-                        next_info = INFO::AT_GOAL
+                        next_info = INFO::AT_GOAL;
                         output = "wait 0 0";
                         break;
                     }
@@ -204,7 +212,12 @@ std::string DelieryFSM::step_fsm( std::string img_path ) {
                     // error from astar
                     else if (next_move.next == INFO::ERROR) { output = "error 0 0"; }
                     // output should be INFO::NA to continue in POV state
-                    else { output = std::format("move {} {}", next_move.distance, next_move.steering); }
+                    else {
+						output = "move " +
+									std::to_string(next_move.distance) +
+									" " +
+									std::to_string(next_move.steering);
+					}
 
                     next_info = next_move.next;
                 
@@ -224,7 +237,10 @@ std::string DelieryFSM::step_fsm( std::string img_path ) {
             if (next_move.next == INFO::ERROR) { next_info = next_move.next; output = "error 0 0"; break; }
 
             // make next move on path
-            output = std::format("move {} {}", next_move.distance, next_move.steering);
+			output = "move " +
+						std::to_string(next_move.distance) +
+						" " +
+						std::to_string(next_move.steering);
             next_info = next_move.next;
             break;
 
@@ -238,7 +254,10 @@ std::string DelieryFSM::step_fsm( std::string img_path ) {
 
             // approach and reach goal
             if (!parked) {
-                output = std::format("move {} {}", euclidian(robot_state, goal_state), goal_state[2] - robot_state[2]);
+				output = "move " +
+							std::to_string(euclidian(robot_state, goal_state)) +
+							" " +
+							std::to_string(angle_2d(robot_state, goal_state));
                 parked = true;
                 next_info = INFO::NA;
                 break;
@@ -246,9 +265,12 @@ std::string DelieryFSM::step_fsm( std::string img_path ) {
             
             // rotate to be orthogonal
             if (!orth) {
-                output = std::format("move {} {}", euclidian(robot_state, goal_state), goal_state[2] - robot_state[2]);
+				output = "move " +
+							std::to_string(0) +
+							" " +
+							std::to_string(goal_state[2] - robot_state[1]);
                 orth = true;
-                next_info = INFO:NA;
+                next_info = INFO::NA;
             }
 
             // update values and prepare for next steps
@@ -263,7 +285,7 @@ std::string DelieryFSM::step_fsm( std::string img_path ) {
             goal_idx = goal_ids.front();
             
             // next goal already found
-            if (measurements.count(goal_idx) > 0) { next_info = INFO::GOAL_FOUND;}
+            if (measurements.count(std::to_string(goal_idx)) > 0) { next_info = INFO::GOAL_FOUND;}
             else {next_info = INFO::GOAL_NOT_FOUND;}
 
             output = "wait 0 0";
@@ -271,9 +293,9 @@ std::string DelieryFSM::step_fsm( std::string img_path ) {
             break;
     }
 
-    fsm.command_next(next_info);
+    command_next(next_info);
     update_log();
-    if (debug) { print_log(); }
+    if (true) { print_log(); }
     return output;
 
 }
@@ -401,10 +423,10 @@ void DeliveryFSM::command_next( INFO next ) {
 }
 
 
-INFO DelieryFSM::robot_measure( std::string img_path ) {
+INFO DeliveryFSM::robot_measure( std::string img_path ) {
 
     // process image
-    if (!sensor->detect(img_path, measurements, goal_idx)) { return INFO::ERROR; }
+    if (!sensor->detect(img_path, measurements)) { return INFO::ERROR; }
     // TODO add way of boxing apriltag and putting the distance on the image
 
     // process recognized states and clear
@@ -418,13 +440,13 @@ INFO DelieryFSM::robot_measure( std::string img_path ) {
     slam->process_movement(next_move.distance, next_move.steering);
 
     // check if the goal is a landmark in the environment
-    if (measurements.count(goal_idx) > 0) { return INFO::GOAL_FOUND; }
+    if (measurements.count(std::to_string(goal_idx)) > 0) { return INFO::GOAL_FOUND; }
     else { return INFO::GOAL_NOT_FOUND; }
 
 }
 
 
-void DelieryFSM::process_obstacles( std::vector<std::vector<state>>& obstacle_states_set ) {
+void DeliveryFSM::process_obstacles( std::vector<std::vector<state>>& obstacle_states_set ) {
 
     // iterate through each obstacle
     for (int i = 0; i < obstacle_ids.size(); ++i) {

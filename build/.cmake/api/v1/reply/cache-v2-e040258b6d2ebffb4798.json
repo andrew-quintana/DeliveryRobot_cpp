@@ -2,6 +2,18 @@
 	"entries" : 
 	[
 		{
+			"name" : "AprilTag_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for AprilTag."
+				}
+			],
+			"type" : "PATH",
+			"value" : "AprilTag_DIR-NOTFOUND"
+		},
+		{
 			"name" : "Boost_DIR",
 			"properties" : 
 			[
@@ -1515,7 +1527,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "[/usr/local/lib/cmake/Boost-1.86.0/BoostConfig.cmake][cfound components: system ][v1.86.0()]"
+			"value" : "[/usr/local/lib/cmake/Boost-1.86.0/BoostConfig.cmake][c ][v1.86.0()]"
 		},
 		{
 			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_GTest",
@@ -1539,7 +1551,19 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "[/usr/local][cfound components: core imgproc ][v4.9.0()]"
+			"value" : "[/usr/local][v4.9.0()]"
+		},
+		{
+			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_Threads",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Details about finding Threads"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "[TRUE][v()]"
 		},
 		{
 			"name" : "GMOCK_LIBRARY",
@@ -1734,6 +1758,18 @@
 			"value" : "/usr/local"
 		},
 		{
+			"name" : "apriltag_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for apriltag."
+				}
+			],
+			"type" : "PATH",
+			"value" : "/usr/local/share/apriltag/cmake"
+		},
+		{
 			"name" : "boost_headers_DIR",
 			"properties" : 
 			[
@@ -1775,7 +1811,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "general;apriltag;general;opencv_core;general;opencv_imgproc;general;Boost::system;general;/usr/local/lib/libgtest.a;general;/usr/local/lib/libgtest_main.a;"
+			"value" : "general;opencv_calib3d;general;opencv_core;general;opencv_dnn;general;opencv_features2d;general;opencv_flann;general;opencv_gapi;general;opencv_highgui;general;opencv_imgcodecs;general;opencv_imgproc;general;opencv_ml;general;opencv_objdetect;general;opencv_photo;general;opencv_stitching;general;opencv_video;general;opencv_videoio;general;/usr/local/lib/libgtest.a;general;/usr/local/lib/libgtest_main.a;"
 		}
 	],
 	"kind" : "cache",
