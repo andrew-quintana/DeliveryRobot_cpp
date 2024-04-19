@@ -14,6 +14,7 @@
 // ------------------------- AVAILABLE FOR DEBUGGING --------------------------
 bool debug = true;
 
+// ---------------------------- LOG DECLARATION ----------------------------
 struct Log {
     int cycle = 0;
 
@@ -36,7 +37,7 @@ struct Log {
     Eigen::Vector3f tag1;
     Eigen::Vector3f tag2;
     Eigen::Vector3f tag8;
-}
+};
 
 
 // ---------------------------- OBJECT DECLARATION ----------------------------
