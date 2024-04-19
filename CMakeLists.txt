@@ -41,15 +41,15 @@ include_directories(
 
 # Add source files to create a shared library named 'delivery_interface'
 add_library(delivery_interface SHARED
-    ${CMAKE_CURRENT_SOURCE_DIR}/cpp/src/DeliveryInterface.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/cpp/include/DeliveryInterface.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/cpp/src/DeliveryFSM.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/cpp/include/DeliveryFSM.h
 
 )
 
 # Set properties for the 'delivery_interface' target
 set_target_properties(delivery_interface PROPERTIES
   VERSION ${PROJECT_VERSION}
-  PUBLIC_HEADER ${CMAKE_CURRENT_SOURCE_DIR}/cpp/include/DeliveryInterface.h
+  PUBLIC_HEADER ${CMAKE_CURRENT_SOURCE_DIR}/cpp/include/DeliveryFSM.h
 )
 
 configure_file(delivery_interface.pc.in delivery_interface.pc @ONLY)
