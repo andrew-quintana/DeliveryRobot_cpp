@@ -38,7 +38,8 @@ include_directories(
 )
 
 # Add source files to create a shared library named 'delivery_interface'
-add_library(delivery_interface SHARED
+add_executable(delivery_interface SHARED
+    ${CMAKE_CURRENT_SOURCE_DIR}/cpp/src/main.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/cpp/src/DeliveryFSM.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/cpp/include/DeliveryFSM.h
     ${CMAKE_CURRENT_SOURCE_DIR}/cpp/src/AprilTagSensor.cpp
@@ -77,6 +78,7 @@ target_link_libraries(delivery_interface PRIVATE
     Eigen3::Eigen
 )
 
+#[[
 # Install the 'delivery_interface' library
 install(TARGETS delivery_interface
   LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
@@ -87,3 +89,4 @@ install(TARGETS delivery_interface
 install(FILES ${CMAKE_BINARY_DIR}/delivery_interface.pc 
   DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/pkgconfig
 )
+]]#

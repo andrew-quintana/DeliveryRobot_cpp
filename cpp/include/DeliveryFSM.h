@@ -40,17 +40,17 @@ enum class ScanState {
 class DeliveryFSM : public Component {
 private:
 
-    MachineState machine_state = MachineState::INITIALIZE;
-
-    ScanState scan_state = ScanState::ROTATE;
+    // ----------------------------- TRACKED STATES -----------------------------
+    MachineState machine_state; 
+    ScanState scan_state;
 
     // ---------------------------- LOG DECLARATION ----------------------------
     struct Log {
         int cycle = 0;
 
         // current states
-        MachineState machine_current = MachineState::INITIALIZE;
-        ScanState scan_current = ScanState::ROTATE;
+        MachineState machine_current = get_machine_state();
+        ScanState scan_current = get_machine_state();
 
         // decision making
         INFO fsm_info;

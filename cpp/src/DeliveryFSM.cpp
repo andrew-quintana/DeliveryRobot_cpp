@@ -6,15 +6,19 @@
 
 // -------------------------------- CONSTRUCTOR/DECONSTRUCTOR ----------------------------------
 DeliveryFSM::DeliveryFSM() {
+    // setup goal locations
 	goal_ids.push(1);
 	goal_ids.push(2);
+
+    // create initial states
+    machine_state = MachineState::INITIALIZE;
+    scan_state = ScanState::ROTATE;
 }
 DeliveryFSM::~DeliveryFSM() {}
 
 // ---------------------------- GETTERS/SETTERS/UPDATERS/PRINTERS ----------------------------
 
 MachineState DeliveryFSM::get_machine_state() { return machine_state; }
-
 ScanState DeliveryFSM::get_scan_state() { return scan_state; }
 
 void DeliveryFSM::set_goal_state() {
@@ -118,10 +122,10 @@ void DeliveryFSM::print_log() {
 
 std::string DeliveryFSM::step_fsm( std::string img_path ) {
     // determine INFO enum for updating FSM state and output string for python interpreter
-
-    // every single run should measure from the most recent picture
     output = "unknown -1 -1";
     measure_output = INFO::UNKNOWN;
+
+    // every single run should measure from the most recent picture
     if (machine_state != MachineState::INITIALIZE) { measure_output = robot_measure(img_path); }
     if (measure_output == INFO::ERROR) { command_next(measure_output); return "error 0 0"; }
 
@@ -499,4 +503,3 @@ void DeliveryFSM::process_obstacles( std::vector<std::vector<state>>& obstacle_s
     }
 
 }
-
