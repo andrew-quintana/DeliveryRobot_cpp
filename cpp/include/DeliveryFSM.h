@@ -49,8 +49,8 @@ private:
         int cycle = 0;
 
         // current states
-        MachineState machine_current = get_machine_state();
-        ScanState scan_current = get_machine_state();
+        MachineState machine_current = MachineState::INITIALIZE;
+        ScanState scan_current = ScanState::ROTATE;
 
         // decision making
         INFO fsm_info;
@@ -68,6 +68,8 @@ private:
         Eigen::Vector3f tag2;
         Eigen::Vector3f tag8;
     } log;
+    
+    
 
 
     // ---------------------------- OBJECT DECLARATION ----------------------------
@@ -139,8 +141,11 @@ private:
 
 public:
 
+	// ------------------------ (DE)CONSTRUCTOR & FACTORIES -------------------------
     DeliveryFSM();
     ~DeliveryFSM();
+    static DeliveryFSM* create();
+    std::string test_functionality(std::string img_path);
 
     
     std::string step_fsm( std::string img_path );

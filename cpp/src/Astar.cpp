@@ -3,10 +3,12 @@
 //
 
 #include "Astar.h"
+
 #include <cmath>
 #include <cassert>
 #include <vector>
 #include <queue>
+#include <iterator>
 
 using namespace boost;
 
@@ -183,7 +185,9 @@ Astar::action Astar::beam_search(state& robot_state, std::vector<std::vector<sta
             std::cout << std::endl;
         }
 
-        for ( float a : angles ) {
+        for ( int i = 0; i < angles.size(); ++i ) {
+			
+			float a = angles(i);
 
             // project potential next state
             float s2 = node_state[2] + a;

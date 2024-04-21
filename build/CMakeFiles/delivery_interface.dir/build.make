@@ -69,10 +69,24 @@ include CMakeFiles/delivery_interface.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/delivery_interface.dir/flags.make
 
+CMakeFiles/delivery_interface.dir/cpp/src/main.cpp.o: CMakeFiles/delivery_interface.dir/flags.make
+CMakeFiles/delivery_interface.dir/cpp/src/main.cpp.o: /home/jetbot/DeliveryRobot/cpp/src/main.cpp
+CMakeFiles/delivery_interface.dir/cpp/src/main.cpp.o: CMakeFiles/delivery_interface.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jetbot/DeliveryRobot/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/delivery_interface.dir/cpp/src/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/delivery_interface.dir/cpp/src/main.cpp.o -MF CMakeFiles/delivery_interface.dir/cpp/src/main.cpp.o.d -o CMakeFiles/delivery_interface.dir/cpp/src/main.cpp.o -c /home/jetbot/DeliveryRobot/cpp/src/main.cpp
+
+CMakeFiles/delivery_interface.dir/cpp/src/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/delivery_interface.dir/cpp/src/main.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jetbot/DeliveryRobot/cpp/src/main.cpp > CMakeFiles/delivery_interface.dir/cpp/src/main.cpp.i
+
+CMakeFiles/delivery_interface.dir/cpp/src/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/delivery_interface.dir/cpp/src/main.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jetbot/DeliveryRobot/cpp/src/main.cpp -o CMakeFiles/delivery_interface.dir/cpp/src/main.cpp.s
+
 CMakeFiles/delivery_interface.dir/cpp/src/DeliveryFSM.cpp.o: CMakeFiles/delivery_interface.dir/flags.make
 CMakeFiles/delivery_interface.dir/cpp/src/DeliveryFSM.cpp.o: /home/jetbot/DeliveryRobot/cpp/src/DeliveryFSM.cpp
 CMakeFiles/delivery_interface.dir/cpp/src/DeliveryFSM.cpp.o: CMakeFiles/delivery_interface.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jetbot/DeliveryRobot/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/delivery_interface.dir/cpp/src/DeliveryFSM.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jetbot/DeliveryRobot/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/delivery_interface.dir/cpp/src/DeliveryFSM.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/delivery_interface.dir/cpp/src/DeliveryFSM.cpp.o -MF CMakeFiles/delivery_interface.dir/cpp/src/DeliveryFSM.cpp.o.d -o CMakeFiles/delivery_interface.dir/cpp/src/DeliveryFSM.cpp.o -c /home/jetbot/DeliveryRobot/cpp/src/DeliveryFSM.cpp
 
 CMakeFiles/delivery_interface.dir/cpp/src/DeliveryFSM.cpp.i: cmake_force
@@ -86,7 +100,7 @@ CMakeFiles/delivery_interface.dir/cpp/src/DeliveryFSM.cpp.s: cmake_force
 CMakeFiles/delivery_interface.dir/cpp/src/AprilTagSensor.cpp.o: CMakeFiles/delivery_interface.dir/flags.make
 CMakeFiles/delivery_interface.dir/cpp/src/AprilTagSensor.cpp.o: /home/jetbot/DeliveryRobot/cpp/src/AprilTagSensor.cpp
 CMakeFiles/delivery_interface.dir/cpp/src/AprilTagSensor.cpp.o: CMakeFiles/delivery_interface.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jetbot/DeliveryRobot/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/delivery_interface.dir/cpp/src/AprilTagSensor.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jetbot/DeliveryRobot/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/delivery_interface.dir/cpp/src/AprilTagSensor.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/delivery_interface.dir/cpp/src/AprilTagSensor.cpp.o -MF CMakeFiles/delivery_interface.dir/cpp/src/AprilTagSensor.cpp.o.d -o CMakeFiles/delivery_interface.dir/cpp/src/AprilTagSensor.cpp.o -c /home/jetbot/DeliveryRobot/cpp/src/AprilTagSensor.cpp
 
 CMakeFiles/delivery_interface.dir/cpp/src/AprilTagSensor.cpp.i: cmake_force
@@ -100,7 +114,7 @@ CMakeFiles/delivery_interface.dir/cpp/src/AprilTagSensor.cpp.s: cmake_force
 CMakeFiles/delivery_interface.dir/cpp/src/BoostGraph.cpp.o: CMakeFiles/delivery_interface.dir/flags.make
 CMakeFiles/delivery_interface.dir/cpp/src/BoostGraph.cpp.o: /home/jetbot/DeliveryRobot/cpp/src/BoostGraph.cpp
 CMakeFiles/delivery_interface.dir/cpp/src/BoostGraph.cpp.o: CMakeFiles/delivery_interface.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jetbot/DeliveryRobot/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/delivery_interface.dir/cpp/src/BoostGraph.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jetbot/DeliveryRobot/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/delivery_interface.dir/cpp/src/BoostGraph.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/delivery_interface.dir/cpp/src/BoostGraph.cpp.o -MF CMakeFiles/delivery_interface.dir/cpp/src/BoostGraph.cpp.o.d -o CMakeFiles/delivery_interface.dir/cpp/src/BoostGraph.cpp.o -c /home/jetbot/DeliveryRobot/cpp/src/BoostGraph.cpp
 
 CMakeFiles/delivery_interface.dir/cpp/src/BoostGraph.cpp.i: cmake_force
@@ -114,7 +128,7 @@ CMakeFiles/delivery_interface.dir/cpp/src/BoostGraph.cpp.s: cmake_force
 CMakeFiles/delivery_interface.dir/cpp/src/CameraCalibration.cpp.o: CMakeFiles/delivery_interface.dir/flags.make
 CMakeFiles/delivery_interface.dir/cpp/src/CameraCalibration.cpp.o: /home/jetbot/DeliveryRobot/cpp/src/CameraCalibration.cpp
 CMakeFiles/delivery_interface.dir/cpp/src/CameraCalibration.cpp.o: CMakeFiles/delivery_interface.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jetbot/DeliveryRobot/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/delivery_interface.dir/cpp/src/CameraCalibration.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jetbot/DeliveryRobot/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/delivery_interface.dir/cpp/src/CameraCalibration.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/delivery_interface.dir/cpp/src/CameraCalibration.cpp.o -MF CMakeFiles/delivery_interface.dir/cpp/src/CameraCalibration.cpp.o.d -o CMakeFiles/delivery_interface.dir/cpp/src/CameraCalibration.cpp.o -c /home/jetbot/DeliveryRobot/cpp/src/CameraCalibration.cpp
 
 CMakeFiles/delivery_interface.dir/cpp/src/CameraCalibration.cpp.i: cmake_force
@@ -128,7 +142,7 @@ CMakeFiles/delivery_interface.dir/cpp/src/CameraCalibration.cpp.s: cmake_force
 CMakeFiles/delivery_interface.dir/cpp/src/ComputationalGeometry.cpp.o: CMakeFiles/delivery_interface.dir/flags.make
 CMakeFiles/delivery_interface.dir/cpp/src/ComputationalGeometry.cpp.o: /home/jetbot/DeliveryRobot/cpp/src/ComputationalGeometry.cpp
 CMakeFiles/delivery_interface.dir/cpp/src/ComputationalGeometry.cpp.o: CMakeFiles/delivery_interface.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jetbot/DeliveryRobot/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/delivery_interface.dir/cpp/src/ComputationalGeometry.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jetbot/DeliveryRobot/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/delivery_interface.dir/cpp/src/ComputationalGeometry.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/delivery_interface.dir/cpp/src/ComputationalGeometry.cpp.o -MF CMakeFiles/delivery_interface.dir/cpp/src/ComputationalGeometry.cpp.o.d -o CMakeFiles/delivery_interface.dir/cpp/src/ComputationalGeometry.cpp.o -c /home/jetbot/DeliveryRobot/cpp/src/ComputationalGeometry.cpp
 
 CMakeFiles/delivery_interface.dir/cpp/src/ComputationalGeometry.cpp.i: cmake_force
@@ -142,7 +156,7 @@ CMakeFiles/delivery_interface.dir/cpp/src/ComputationalGeometry.cpp.s: cmake_for
 CMakeFiles/delivery_interface.dir/cpp/src/Mapper.cpp.o: CMakeFiles/delivery_interface.dir/flags.make
 CMakeFiles/delivery_interface.dir/cpp/src/Mapper.cpp.o: /home/jetbot/DeliveryRobot/cpp/src/Mapper.cpp
 CMakeFiles/delivery_interface.dir/cpp/src/Mapper.cpp.o: CMakeFiles/delivery_interface.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jetbot/DeliveryRobot/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/delivery_interface.dir/cpp/src/Mapper.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jetbot/DeliveryRobot/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/delivery_interface.dir/cpp/src/Mapper.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/delivery_interface.dir/cpp/src/Mapper.cpp.o -MF CMakeFiles/delivery_interface.dir/cpp/src/Mapper.cpp.o.d -o CMakeFiles/delivery_interface.dir/cpp/src/Mapper.cpp.o -c /home/jetbot/DeliveryRobot/cpp/src/Mapper.cpp
 
 CMakeFiles/delivery_interface.dir/cpp/src/Mapper.cpp.i: cmake_force
@@ -156,7 +170,7 @@ CMakeFiles/delivery_interface.dir/cpp/src/Mapper.cpp.s: cmake_force
 CMakeFiles/delivery_interface.dir/cpp/src/OnlineSLAM.cpp.o: CMakeFiles/delivery_interface.dir/flags.make
 CMakeFiles/delivery_interface.dir/cpp/src/OnlineSLAM.cpp.o: /home/jetbot/DeliveryRobot/cpp/src/OnlineSLAM.cpp
 CMakeFiles/delivery_interface.dir/cpp/src/OnlineSLAM.cpp.o: CMakeFiles/delivery_interface.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jetbot/DeliveryRobot/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/delivery_interface.dir/cpp/src/OnlineSLAM.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jetbot/DeliveryRobot/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/delivery_interface.dir/cpp/src/OnlineSLAM.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/delivery_interface.dir/cpp/src/OnlineSLAM.cpp.o -MF CMakeFiles/delivery_interface.dir/cpp/src/OnlineSLAM.cpp.o.d -o CMakeFiles/delivery_interface.dir/cpp/src/OnlineSLAM.cpp.o -c /home/jetbot/DeliveryRobot/cpp/src/OnlineSLAM.cpp
 
 CMakeFiles/delivery_interface.dir/cpp/src/OnlineSLAM.cpp.i: cmake_force
@@ -170,7 +184,7 @@ CMakeFiles/delivery_interface.dir/cpp/src/OnlineSLAM.cpp.s: cmake_force
 CMakeFiles/delivery_interface.dir/cpp/src/Utilities.cpp.o: CMakeFiles/delivery_interface.dir/flags.make
 CMakeFiles/delivery_interface.dir/cpp/src/Utilities.cpp.o: /home/jetbot/DeliveryRobot/cpp/src/Utilities.cpp
 CMakeFiles/delivery_interface.dir/cpp/src/Utilities.cpp.o: CMakeFiles/delivery_interface.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jetbot/DeliveryRobot/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/delivery_interface.dir/cpp/src/Utilities.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jetbot/DeliveryRobot/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/delivery_interface.dir/cpp/src/Utilities.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/delivery_interface.dir/cpp/src/Utilities.cpp.o -MF CMakeFiles/delivery_interface.dir/cpp/src/Utilities.cpp.o.d -o CMakeFiles/delivery_interface.dir/cpp/src/Utilities.cpp.o -c /home/jetbot/DeliveryRobot/cpp/src/Utilities.cpp
 
 CMakeFiles/delivery_interface.dir/cpp/src/Utilities.cpp.i: cmake_force
@@ -183,6 +197,7 @@ CMakeFiles/delivery_interface.dir/cpp/src/Utilities.cpp.s: cmake_force
 
 # Object files for target delivery_interface
 delivery_interface_OBJECTS = \
+"CMakeFiles/delivery_interface.dir/cpp/src/main.cpp.o" \
 "CMakeFiles/delivery_interface.dir/cpp/src/DeliveryFSM.cpp.o" \
 "CMakeFiles/delivery_interface.dir/cpp/src/AprilTagSensor.cpp.o" \
 "CMakeFiles/delivery_interface.dir/cpp/src/BoostGraph.cpp.o" \
@@ -195,42 +210,42 @@ delivery_interface_OBJECTS = \
 # External object files for target delivery_interface
 delivery_interface_EXTERNAL_OBJECTS =
 
-libdelivery_interface.so.1.0: CMakeFiles/delivery_interface.dir/cpp/src/DeliveryFSM.cpp.o
-libdelivery_interface.so.1.0: CMakeFiles/delivery_interface.dir/cpp/src/AprilTagSensor.cpp.o
-libdelivery_interface.so.1.0: CMakeFiles/delivery_interface.dir/cpp/src/BoostGraph.cpp.o
-libdelivery_interface.so.1.0: CMakeFiles/delivery_interface.dir/cpp/src/CameraCalibration.cpp.o
-libdelivery_interface.so.1.0: CMakeFiles/delivery_interface.dir/cpp/src/ComputationalGeometry.cpp.o
-libdelivery_interface.so.1.0: CMakeFiles/delivery_interface.dir/cpp/src/Mapper.cpp.o
-libdelivery_interface.so.1.0: CMakeFiles/delivery_interface.dir/cpp/src/OnlineSLAM.cpp.o
-libdelivery_interface.so.1.0: CMakeFiles/delivery_interface.dir/cpp/src/Utilities.cpp.o
-libdelivery_interface.so.1.0: CMakeFiles/delivery_interface.dir/build.make
-libdelivery_interface.so.1.0: /usr/local/lib/libopencv_gapi.so.4.9.0
-libdelivery_interface.so.1.0: /usr/local/lib/libopencv_highgui.so.4.9.0
-libdelivery_interface.so.1.0: /usr/local/lib/libopencv_ml.so.4.9.0
-libdelivery_interface.so.1.0: /usr/local/lib/libopencv_objdetect.so.4.9.0
-libdelivery_interface.so.1.0: /usr/local/lib/libopencv_photo.so.4.9.0
-libdelivery_interface.so.1.0: /usr/local/lib/libopencv_stitching.so.4.9.0
-libdelivery_interface.so.1.0: /usr/local/lib/libopencv_video.so.4.9.0
-libdelivery_interface.so.1.0: /usr/local/lib/libopencv_videoio.so.4.9.0
-libdelivery_interface.so.1.0: /usr/local/lib/libgtest.a
-libdelivery_interface.so.1.0: /usr/local/lib/libgtest_main.a
-libdelivery_interface.so.1.0: /usr/local/lib/libopencv_imgcodecs.so.4.9.0
-libdelivery_interface.so.1.0: /usr/local/lib/libopencv_dnn.so.4.9.0
-libdelivery_interface.so.1.0: /usr/local/lib/libopencv_calib3d.so.4.9.0
-libdelivery_interface.so.1.0: /usr/local/lib/libopencv_features2d.so.4.9.0
-libdelivery_interface.so.1.0: /usr/local/lib/libopencv_flann.so.4.9.0
-libdelivery_interface.so.1.0: /usr/local/lib/libopencv_imgproc.so.4.9.0
-libdelivery_interface.so.1.0: /usr/local/lib/libopencv_core.so.4.9.0
-libdelivery_interface.so.1.0: CMakeFiles/delivery_interface.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jetbot/DeliveryRobot/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX shared library libdelivery_interface.so"
+delivery_interface-1.0: CMakeFiles/delivery_interface.dir/cpp/src/main.cpp.o
+delivery_interface-1.0: CMakeFiles/delivery_interface.dir/cpp/src/DeliveryFSM.cpp.o
+delivery_interface-1.0: CMakeFiles/delivery_interface.dir/cpp/src/AprilTagSensor.cpp.o
+delivery_interface-1.0: CMakeFiles/delivery_interface.dir/cpp/src/BoostGraph.cpp.o
+delivery_interface-1.0: CMakeFiles/delivery_interface.dir/cpp/src/CameraCalibration.cpp.o
+delivery_interface-1.0: CMakeFiles/delivery_interface.dir/cpp/src/ComputationalGeometry.cpp.o
+delivery_interface-1.0: CMakeFiles/delivery_interface.dir/cpp/src/Mapper.cpp.o
+delivery_interface-1.0: CMakeFiles/delivery_interface.dir/cpp/src/OnlineSLAM.cpp.o
+delivery_interface-1.0: CMakeFiles/delivery_interface.dir/cpp/src/Utilities.cpp.o
+delivery_interface-1.0: CMakeFiles/delivery_interface.dir/build.make
+delivery_interface-1.0: /usr/local/lib/libopencv_gapi.so.4.9.0
+delivery_interface-1.0: /usr/local/lib/libopencv_highgui.so.4.9.0
+delivery_interface-1.0: /usr/local/lib/libopencv_ml.so.4.9.0
+delivery_interface-1.0: /usr/local/lib/libopencv_objdetect.so.4.9.0
+delivery_interface-1.0: /usr/local/lib/libopencv_photo.so.4.9.0
+delivery_interface-1.0: /usr/local/lib/libopencv_stitching.so.4.9.0
+delivery_interface-1.0: /usr/local/lib/libopencv_video.so.4.9.0
+delivery_interface-1.0: /usr/local/lib/libopencv_videoio.so.4.9.0
+delivery_interface-1.0: /usr/local/lib/libgtest.a
+delivery_interface-1.0: /usr/local/lib/libgtest_main.a
+delivery_interface-1.0: /usr/local/lib/libopencv_imgcodecs.so.4.9.0
+delivery_interface-1.0: /usr/local/lib/libopencv_dnn.so.4.9.0
+delivery_interface-1.0: /usr/local/lib/libopencv_calib3d.so.4.9.0
+delivery_interface-1.0: /usr/local/lib/libopencv_features2d.so.4.9.0
+delivery_interface-1.0: /usr/local/lib/libopencv_flann.so.4.9.0
+delivery_interface-1.0: /usr/local/lib/libopencv_imgproc.so.4.9.0
+delivery_interface-1.0: /usr/local/lib/libopencv_core.so.4.9.0
+delivery_interface-1.0: CMakeFiles/delivery_interface.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jetbot/DeliveryRobot/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable delivery_interface"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/delivery_interface.dir/link.txt --verbose=$(VERBOSE)
-	$(CMAKE_COMMAND) -E cmake_symlink_library libdelivery_interface.so.1.0 libdelivery_interface.so.1.0 libdelivery_interface.so
+	$(CMAKE_COMMAND) -E cmake_symlink_executable delivery_interface-1.0 delivery_interface
 
-libdelivery_interface.so: libdelivery_interface.so.1.0
-	@$(CMAKE_COMMAND) -E touch_nocreate libdelivery_interface.so
+delivery_interface: delivery_interface-1.0
 
 # Rule to build all files generated by this target.
-CMakeFiles/delivery_interface.dir/build: libdelivery_interface.so
+CMakeFiles/delivery_interface.dir/build: delivery_interface
 .PHONY : CMakeFiles/delivery_interface.dir/build
 
 CMakeFiles/delivery_interface.dir/clean:

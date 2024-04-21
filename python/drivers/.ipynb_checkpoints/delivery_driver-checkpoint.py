@@ -7,11 +7,12 @@ import time
 class DeliveryRobot:
     def __init__(self):
         self.robot = Robot()
-        self.camera = Camera.instance(width=2464, height=2464)
+        self.camera = Camera.instance(width=224, height=224)
 
     def take_picture(self, directory):
         filename = os.path.join(directory, str(uuid1()) + '.jpg')
         cv2.imwrite(filename, self.camera.value)
+        return filename
 
     def stop(self):
         self.robot.stop()

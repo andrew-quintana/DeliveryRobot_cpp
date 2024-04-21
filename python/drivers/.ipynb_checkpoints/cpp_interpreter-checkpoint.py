@@ -3,7 +3,7 @@ import ctypes
 import os
 
 # Load the shared library
-os.chdir('/workspace/DeliveryRobot/build')
+os.chdir('/workspace/libraries/libs')
 print(os.listdir())
 lib = ctypes.CDLL('libdelivery_interface.so')
 

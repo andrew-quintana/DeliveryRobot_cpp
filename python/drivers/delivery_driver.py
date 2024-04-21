@@ -12,6 +12,7 @@ class DeliveryRobot:
     def take_picture(self, directory):
         filename = os.path.join(directory, str(uuid1()) + '.jpg')
         cv2.imwrite(filename, self.camera.value)
+        return filename
 
     def stop(self):
         self.robot.stop()

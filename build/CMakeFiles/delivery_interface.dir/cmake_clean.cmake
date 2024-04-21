@@ -15,9 +15,11 @@ file(REMOVE_RECURSE
   "CMakeFiles/delivery_interface.dir/cpp/src/OnlineSLAM.cpp.o.d"
   "CMakeFiles/delivery_interface.dir/cpp/src/Utilities.cpp.o"
   "CMakeFiles/delivery_interface.dir/cpp/src/Utilities.cpp.o.d"
-  "libdelivery_interface.pdb"
-  "libdelivery_interface.so"
-  "libdelivery_interface.so.1.0"
+  "CMakeFiles/delivery_interface.dir/cpp/src/main.cpp.o"
+  "CMakeFiles/delivery_interface.dir/cpp/src/main.cpp.o.d"
+  "delivery_interface"
+  "delivery_interface-1.0"
+  "delivery_interface.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

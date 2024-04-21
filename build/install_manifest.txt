@@ -1,4 +1,1 @@
-/usr/local/lib/libdelivery_interface.so.1.0
-/usr/local/lib/libdelivery_interface.so
-/usr/local/include/DeliveryFSM.h
-/usr/local/share/pkgconfig/delivery_interface.pc
+/home/jetbot/DeliveryRobot/python/delivery_exe

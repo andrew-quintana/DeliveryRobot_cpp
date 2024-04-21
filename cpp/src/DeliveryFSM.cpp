@@ -3,8 +3,9 @@
 //
 
 #include "DeliveryFSM.h"
+#include <pybind11/pybind11.h>
 
-// -------------------------------- CONSTRUCTOR/DECONSTRUCTOR ----------------------------------
+// -------------------------------- (DE)CONSTRUCTOR & FACTORIES ----------------------------------
 DeliveryFSM::DeliveryFSM() {
     // setup goal locations
 	goal_ids.push(1);
@@ -16,10 +17,20 @@ DeliveryFSM::DeliveryFSM() {
 }
 DeliveryFSM::~DeliveryFSM() {}
 
+DeliveryFSM * DeliveryFSM::create() {
+	// factory function
+	return new DeliveryFSM();
+}
+
 // ---------------------------- GETTERS/SETTERS/UPDATERS/PRINTERS ----------------------------
 
 MachineState DeliveryFSM::get_machine_state() { return machine_state; }
 ScanState DeliveryFSM::get_scan_state() { return scan_state; }
+
+std::string DeliveryFSM::test_functionality(std::string img_path) {
+	std::printf("Received Image Path: %s\n", img_path.c_str());
+	return "HERE IT IS: " + img_path;
+}
 
 void DeliveryFSM::set_goal_state() {
     if (measurements.count(std::to_string(goal_idx)) > 0) {
@@ -502,4 +513,11 @@ void DeliveryFSM::process_obstacles( std::vector<std::vector<state>>& obstacle_s
 
     }
 
+}
+
+namespace py = pybind11;
+PYBIND11_MODULE(delivery_module, m) {
+	py::class_<DeliveryFSM>(m, "DeliveryFSM")
+		.def(py::init<>())
+		.def("test_functionality", &DeliveryFSM::test_functionality);
 }

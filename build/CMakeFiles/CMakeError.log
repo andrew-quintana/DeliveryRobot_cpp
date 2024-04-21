@@ -130,3 +130,333 @@ make: *** [cmTC_2b6f6/fast] Error 2
 
 
 
+Performing C++ SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-8zDSCF
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_92fca/fast && /usr/bin/make  -f CMakeFiles/cmTC_92fca.dir/build.make CMakeFiles/cmTC_92fca.dir/build
+make[1]: Entering directory '/home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-8zDSCF'
+Building CXX object CMakeFiles/cmTC_92fca.dir/src.cxx.o
+/usr/bin/c++ -DCMAKE_HAVE_LIBC_PTHREAD  -std=gnu++17 -o CMakeFiles/cmTC_92fca.dir/src.cxx.o -c /home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-8zDSCF/src.cxx
+Linking CXX executable cmTC_92fca
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_92fca.dir/link.txt --verbose=1
+/usr/bin/c++ CMakeFiles/cmTC_92fca.dir/src.cxx.o -o cmTC_92fca 
+CMakeFiles/cmTC_92fca.dir/src.cxx.o: In function `main':
+src.cxx:(.text+0x48): undefined reference to `pthread_create'
+src.cxx:(.text+0x50): undefined reference to `pthread_detach'
+src.cxx:(.text+0x58): undefined reference to `pthread_cancel'
+src.cxx:(.text+0x64): undefined reference to `pthread_join'
+src.cxx:(.text+0x74): undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_92fca.dir/build.make:98: recipe for target 'cmTC_92fca' failed
+make[1]: *** [cmTC_92fca] Error 1
+make[1]: Leaving directory '/home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-8zDSCF'
+Makefile:127: recipe for target 'cmTC_92fca/fast' failed
+make: *** [cmTC_92fca/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-1KqGRo
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_62956/fast && /usr/bin/make  -f CMakeFiles/cmTC_62956.dir/build.make CMakeFiles/cmTC_62956.dir/build
+make[1]: Entering directory '/home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-1KqGRo'
+Building CXX object CMakeFiles/cmTC_62956.dir/CheckFunctionExists.cxx.o
+/usr/bin/c++   -DCHECK_FUNCTION_EXISTS=pthread_create -std=gnu++17 -o CMakeFiles/cmTC_62956.dir/CheckFunctionExists.cxx.o -c /home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-1KqGRo/CheckFunctionExists.cxx
+Linking CXX executable cmTC_62956
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_62956.dir/link.txt --verbose=1
+/usr/bin/c++  -DCHECK_FUNCTION_EXISTS=pthread_create CMakeFiles/cmTC_62956.dir/CheckFunctionExists.cxx.o -o cmTC_62956  -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_62956.dir/build.make:98: recipe for target 'cmTC_62956' failed
+make[1]: *** [cmTC_62956] Error 1
+make[1]: Leaving directory '/home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-1KqGRo'
+Makefile:127: recipe for target 'cmTC_62956/fast' failed
+make: *** [cmTC_62956/fast] Error 2
+
+
+
+Performing C++ SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-uyfIZs
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_df3da/fast && /usr/bin/make  -f CMakeFiles/cmTC_df3da.dir/build.make CMakeFiles/cmTC_df3da.dir/build
+make[1]: Entering directory '/home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-uyfIZs'
+Building CXX object CMakeFiles/cmTC_df3da.dir/src.cxx.o
+/usr/bin/c++ -DCMAKE_HAVE_LIBC_PTHREAD  -std=gnu++17 -o CMakeFiles/cmTC_df3da.dir/src.cxx.o -c /home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-uyfIZs/src.cxx
+Linking CXX executable cmTC_df3da
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_df3da.dir/link.txt --verbose=1
+/usr/bin/c++ CMakeFiles/cmTC_df3da.dir/src.cxx.o -o cmTC_df3da 
+CMakeFiles/cmTC_df3da.dir/src.cxx.o: In function `main':
+src.cxx:(.text+0x48): undefined reference to `pthread_create'
+src.cxx:(.text+0x50): undefined reference to `pthread_detach'
+src.cxx:(.text+0x58): undefined reference to `pthread_cancel'
+src.cxx:(.text+0x64): undefined reference to `pthread_join'
+src.cxx:(.text+0x74): undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_df3da.dir/build.make:98: recipe for target 'cmTC_df3da' failed
+make[1]: *** [cmTC_df3da] Error 1
+make[1]: Leaving directory '/home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-uyfIZs'
+Makefile:127: recipe for target 'cmTC_df3da/fast' failed
+make: *** [cmTC_df3da/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-fwelf0
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_46d42/fast && /usr/bin/make  -f CMakeFiles/cmTC_46d42.dir/build.make CMakeFiles/cmTC_46d42.dir/build
+make[1]: Entering directory '/home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-fwelf0'
+Building CXX object CMakeFiles/cmTC_46d42.dir/CheckFunctionExists.cxx.o
+/usr/bin/c++   -DCHECK_FUNCTION_EXISTS=pthread_create -std=gnu++17 -o CMakeFiles/cmTC_46d42.dir/CheckFunctionExists.cxx.o -c /home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-fwelf0/CheckFunctionExists.cxx
+Linking CXX executable cmTC_46d42
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_46d42.dir/link.txt --verbose=1
+/usr/bin/c++  -DCHECK_FUNCTION_EXISTS=pthread_create CMakeFiles/cmTC_46d42.dir/CheckFunctionExists.cxx.o -o cmTC_46d42  -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_46d42.dir/build.make:98: recipe for target 'cmTC_46d42' failed
+make[1]: *** [cmTC_46d42] Error 1
+make[1]: Leaving directory '/home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-fwelf0'
+Makefile:127: recipe for target 'cmTC_46d42/fast' failed
+make: *** [cmTC_46d42/fast] Error 2
+
+
+
+Performing C++ SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-iWeFrk
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_3d9bb/fast && /usr/bin/make  -f CMakeFiles/cmTC_3d9bb.dir/build.make CMakeFiles/cmTC_3d9bb.dir/build
+make[1]: Entering directory '/home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-iWeFrk'
+Building CXX object CMakeFiles/cmTC_3d9bb.dir/src.cxx.o
+/usr/bin/c++ -DCMAKE_HAVE_LIBC_PTHREAD  -std=gnu++17 -o CMakeFiles/cmTC_3d9bb.dir/src.cxx.o -c /home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-iWeFrk/src.cxx
+Linking CXX executable cmTC_3d9bb
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3d9bb.dir/link.txt --verbose=1
+/usr/bin/c++ CMakeFiles/cmTC_3d9bb.dir/src.cxx.o -o cmTC_3d9bb 
+CMakeFiles/cmTC_3d9bb.dir/src.cxx.o: In function `main':
+src.cxx:(.text+0x48): undefined reference to `pthread_create'
+src.cxx:(.text+0x50): undefined reference to `pthread_detach'
+src.cxx:(.text+0x58): undefined reference to `pthread_cancel'
+src.cxx:(.text+0x64): undefined reference to `pthread_join'
+src.cxx:(.text+0x74): undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_3d9bb.dir/build.make:98: recipe for target 'cmTC_3d9bb' failed
+make[1]: *** [cmTC_3d9bb] Error 1
+make[1]: Leaving directory '/home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-iWeFrk'
+Makefile:127: recipe for target 'cmTC_3d9bb/fast' failed
+make: *** [cmTC_3d9bb/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-bclIhr
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_b972f/fast && /usr/bin/make  -f CMakeFiles/cmTC_b972f.dir/build.make CMakeFiles/cmTC_b972f.dir/build
+make[1]: Entering directory '/home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-bclIhr'
+Building CXX object CMakeFiles/cmTC_b972f.dir/CheckFunctionExists.cxx.o
+/usr/bin/c++   -DCHECK_FUNCTION_EXISTS=pthread_create -std=gnu++17 -o CMakeFiles/cmTC_b972f.dir/CheckFunctionExists.cxx.o -c /home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-bclIhr/CheckFunctionExists.cxx
+Linking CXX executable cmTC_b972f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b972f.dir/link.txt --verbose=1
+/usr/bin/c++  -DCHECK_FUNCTION_EXISTS=pthread_create CMakeFiles/cmTC_b972f.dir/CheckFunctionExists.cxx.o -o cmTC_b972f  -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_b972f.dir/build.make:98: recipe for target 'cmTC_b972f' failed
+make[1]: *** [cmTC_b972f] Error 1
+make[1]: Leaving directory '/home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-bclIhr'
+Makefile:127: recipe for target 'cmTC_b972f/fast' failed
+make: *** [cmTC_b972f/fast] Error 2
+
+
+
+Performing C++ SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-zuJ4BH
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_4e2c6/fast && /usr/bin/make  -f CMakeFiles/cmTC_4e2c6.dir/build.make CMakeFiles/cmTC_4e2c6.dir/build
+make[1]: Entering directory '/home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-zuJ4BH'
+Building CXX object CMakeFiles/cmTC_4e2c6.dir/src.cxx.o
+/usr/bin/c++ -DCMAKE_HAVE_LIBC_PTHREAD  -std=gnu++17 -o CMakeFiles/cmTC_4e2c6.dir/src.cxx.o -c /home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-zuJ4BH/src.cxx
+Linking CXX executable cmTC_4e2c6
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4e2c6.dir/link.txt --verbose=1
+/usr/bin/c++ CMakeFiles/cmTC_4e2c6.dir/src.cxx.o -o cmTC_4e2c6 
+CMakeFiles/cmTC_4e2c6.dir/src.cxx.o: In function `main':
+src.cxx:(.text+0x48): undefined reference to `pthread_create'
+src.cxx:(.text+0x50): undefined reference to `pthread_detach'
+src.cxx:(.text+0x58): undefined reference to `pthread_cancel'
+src.cxx:(.text+0x64): undefined reference to `pthread_join'
+src.cxx:(.text+0x74): undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_4e2c6.dir/build.make:98: recipe for target 'cmTC_4e2c6' failed
+make[1]: *** [cmTC_4e2c6] Error 1
+make[1]: Leaving directory '/home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-zuJ4BH'
+Makefile:127: recipe for target 'cmTC_4e2c6/fast' failed
+make: *** [cmTC_4e2c6/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-wwrrYB
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_7213f/fast && /usr/bin/make  -f CMakeFiles/cmTC_7213f.dir/build.make CMakeFiles/cmTC_7213f.dir/build
+make[1]: Entering directory '/home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-wwrrYB'
+Building CXX object CMakeFiles/cmTC_7213f.dir/CheckFunctionExists.cxx.o
+/usr/bin/c++   -DCHECK_FUNCTION_EXISTS=pthread_create -std=gnu++17 -o CMakeFiles/cmTC_7213f.dir/CheckFunctionExists.cxx.o -c /home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-wwrrYB/CheckFunctionExists.cxx
+Linking CXX executable cmTC_7213f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7213f.dir/link.txt --verbose=1
+/usr/bin/c++  -DCHECK_FUNCTION_EXISTS=pthread_create CMakeFiles/cmTC_7213f.dir/CheckFunctionExists.cxx.o -o cmTC_7213f  -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_7213f.dir/build.make:98: recipe for target 'cmTC_7213f' failed
+make[1]: *** [cmTC_7213f] Error 1
+make[1]: Leaving directory '/home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-wwrrYB'
+Makefile:127: recipe for target 'cmTC_7213f/fast' failed
+make: *** [cmTC_7213f/fast] Error 2
+
+
+
+Performing C++ SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-x58LNY
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_68e88/fast && /usr/bin/make  -f CMakeFiles/cmTC_68e88.dir/build.make CMakeFiles/cmTC_68e88.dir/build
+make[1]: Entering directory '/home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-x58LNY'
+Building CXX object CMakeFiles/cmTC_68e88.dir/src.cxx.o
+/usr/bin/c++ -DCMAKE_HAVE_LIBC_PTHREAD  -std=gnu++17 -o CMakeFiles/cmTC_68e88.dir/src.cxx.o -c /home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-x58LNY/src.cxx
+Linking CXX executable cmTC_68e88
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_68e88.dir/link.txt --verbose=1
+/usr/bin/c++ CMakeFiles/cmTC_68e88.dir/src.cxx.o -o cmTC_68e88 
+CMakeFiles/cmTC_68e88.dir/src.cxx.o: In function `main':
+src.cxx:(.text+0x48): undefined reference to `pthread_create'
+src.cxx:(.text+0x50): undefined reference to `pthread_detach'
+src.cxx:(.text+0x58): undefined reference to `pthread_cancel'
+src.cxx:(.text+0x64): undefined reference to `pthread_join'
+src.cxx:(.text+0x74): undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_68e88.dir/build.make:98: recipe for target 'cmTC_68e88' failed
+make[1]: *** [cmTC_68e88] Error 1
+make[1]: Leaving directory '/home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-x58LNY'
+Makefile:127: recipe for target 'cmTC_68e88/fast' failed
+make: *** [cmTC_68e88/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-JkmXnl
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_24910/fast && /usr/bin/make  -f CMakeFiles/cmTC_24910.dir/build.make CMakeFiles/cmTC_24910.dir/build
+make[1]: Entering directory '/home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-JkmXnl'
+Building CXX object CMakeFiles/cmTC_24910.dir/CheckFunctionExists.cxx.o
+/usr/bin/c++   -DCHECK_FUNCTION_EXISTS=pthread_create -std=gnu++17 -o CMakeFiles/cmTC_24910.dir/CheckFunctionExists.cxx.o -c /home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-JkmXnl/CheckFunctionExists.cxx
+Linking CXX executable cmTC_24910
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_24910.dir/link.txt --verbose=1
+/usr/bin/c++  -DCHECK_FUNCTION_EXISTS=pthread_create CMakeFiles/cmTC_24910.dir/CheckFunctionExists.cxx.o -o cmTC_24910  -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_24910.dir/build.make:98: recipe for target 'cmTC_24910' failed
+make[1]: *** [cmTC_24910] Error 1
+make[1]: Leaving directory '/home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-JkmXnl'
+Makefile:127: recipe for target 'cmTC_24910/fast' failed
+make: *** [cmTC_24910/fast] Error 2
+
+
+

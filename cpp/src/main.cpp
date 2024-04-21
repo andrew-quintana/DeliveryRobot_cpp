@@ -7,12 +7,12 @@ int main() {
     //DeliveryFSM fsm = DeliveryFSM();
 
     // test of functionality
-    printf("Input Filepath: ");
+    std::string img_path;
+    std::printf("Input Filepath: ");
     std::getline(std::cin, img_path);
-    printf("Received Image Path!");
-    cv::Mat image = cv::imread(img_path, cv::IMREAD_COLOR);
-    cv::imshow("Image", image);
-    cv::waitKey(0);
-    cv::destroyAllWindows();
-
+    std::printf("Received Image Path!\n");
+    std::printf(img_path.c_str());
+	std::printf("Ending...\n");
+	
+	return 0;
 }
