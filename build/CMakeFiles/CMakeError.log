@@ -460,3 +460,589 @@ make: *** [cmTC_24910/fast] Error 2
 
 
 
+Performing C++ SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-Uw1ZdN
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_b985d/fast && /usr/bin/make  -f CMakeFiles/cmTC_b985d.dir/build.make CMakeFiles/cmTC_b985d.dir/build
+make[1]: Entering directory '/home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-Uw1ZdN'
+Building CXX object CMakeFiles/cmTC_b985d.dir/src.cxx.o
+/usr/bin/c++ -DCMAKE_HAVE_LIBC_PTHREAD  -std=gnu++17 -o CMakeFiles/cmTC_b985d.dir/src.cxx.o -c /home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-Uw1ZdN/src.cxx
+Linking CXX executable cmTC_b985d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b985d.dir/link.txt --verbose=1
+/usr/bin/c++ CMakeFiles/cmTC_b985d.dir/src.cxx.o -o cmTC_b985d 
+CMakeFiles/cmTC_b985d.dir/src.cxx.o: In function `main':
+src.cxx:(.text+0x48): undefined reference to `pthread_create'
+src.cxx:(.text+0x50): undefined reference to `pthread_detach'
+src.cxx:(.text+0x58): undefined reference to `pthread_cancel'
+src.cxx:(.text+0x64): undefined reference to `pthread_join'
+src.cxx:(.text+0x74): undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_b985d.dir/build.make:98: recipe for target 'cmTC_b985d' failed
+make[1]: *** [cmTC_b985d] Error 1
+make[1]: Leaving directory '/home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-Uw1ZdN'
+Makefile:127: recipe for target 'cmTC_b985d/fast' failed
+make: *** [cmTC_b985d/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-sMFUkR
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_2f61e/fast && /usr/bin/make  -f CMakeFiles/cmTC_2f61e.dir/build.make CMakeFiles/cmTC_2f61e.dir/build
+make[1]: Entering directory '/home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-sMFUkR'
+Building CXX object CMakeFiles/cmTC_2f61e.dir/CheckFunctionExists.cxx.o
+/usr/bin/c++   -DCHECK_FUNCTION_EXISTS=pthread_create -std=gnu++17 -o CMakeFiles/cmTC_2f61e.dir/CheckFunctionExists.cxx.o -c /home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-sMFUkR/CheckFunctionExists.cxx
+Linking CXX executable cmTC_2f61e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2f61e.dir/link.txt --verbose=1
+/usr/bin/c++  -DCHECK_FUNCTION_EXISTS=pthread_create CMakeFiles/cmTC_2f61e.dir/CheckFunctionExists.cxx.o -o cmTC_2f61e  -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_2f61e.dir/build.make:98: recipe for target 'cmTC_2f61e' failed
+make[1]: *** [cmTC_2f61e] Error 1
+make[1]: Leaving directory '/home/jetbot/DeliveryRobot/build/CMakeFiles/CMakeScratch/TryCompile-sMFUkR'
+Makefile:127: recipe for target 'cmTC_2f61e/fast' failed
+make: *** [cmTC_2f61e/fast] Error 2
+
+
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_746d8/fast"
+/usr/bin/make -f CMakeFiles/cmTC_746d8.dir/build.make CMakeFiles/cmTC_746d8.dir/build
+make[1]: Entering directory '/workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_746d8.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -std=gnu++1z -o CMakeFiles/cmTC_746d8.dir/CheckSymbolExists.cxx.o -c /workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+Linking CXX executable cmTC_746d8
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_746d8.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_746d8.dir/CheckSymbolExists.cxx.o  -o cmTC_746d8 
+CMakeFiles/cmTC_746d8.dir/CheckSymbolExists.cxx.o: In function `main':
+CheckSymbolExists.cxx:(.text+0x14): undefined reference to `pthread_create'
+CheckSymbolExists.cxx:(.text+0x18): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_746d8.dir/build.make:97: recipe for target 'cmTC_746d8' failed
+make[1]: *** [cmTC_746d8] Error 1
+make[1]: Leaving directory '/workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_746d8/fast' failed
+make: *** [cmTC_746d8/fast] Error 2
+
+File /workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_eac91/fast"
+/usr/bin/make -f CMakeFiles/cmTC_eac91.dir/build.make CMakeFiles/cmTC_eac91.dir/build
+make[1]: Entering directory '/workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_eac91.dir/CheckFunctionExists.cxx.o
+/usr/bin/c++    -DCHECK_FUNCTION_EXISTS=pthread_create   -std=gnu++1z -o CMakeFiles/cmTC_eac91.dir/CheckFunctionExists.cxx.o -c /workspace/DeliveryRobot/build/CMakeFiles/CheckLibraryExists/CheckFunctionExists.cxx
+Linking CXX executable cmTC_eac91
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_eac91.dir/link.txt --verbose=1
+/usr/bin/c++   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_eac91.dir/CheckFunctionExists.cxx.o  -o cmTC_eac91 -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_eac91.dir/build.make:97: recipe for target 'cmTC_eac91' failed
+make[1]: *** [cmTC_eac91] Error 1
+make[1]: Leaving directory '/workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_eac91/fast' failed
+make: *** [cmTC_eac91/fast] Error 2
+
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_24b7c/fast"
+/usr/bin/make -f CMakeFiles/cmTC_24b7c.dir/build.make CMakeFiles/cmTC_24b7c.dir/build
+make[1]: Entering directory '/workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_24b7c.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -std=gnu++1z -o CMakeFiles/cmTC_24b7c.dir/CheckSymbolExists.cxx.o -c /workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+Linking CXX executable cmTC_24b7c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_24b7c.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_24b7c.dir/CheckSymbolExists.cxx.o  -o cmTC_24b7c 
+CMakeFiles/cmTC_24b7c.dir/CheckSymbolExists.cxx.o: In function `main':
+CheckSymbolExists.cxx:(.text+0x14): undefined reference to `pthread_create'
+CheckSymbolExists.cxx:(.text+0x18): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_24b7c.dir/build.make:97: recipe for target 'cmTC_24b7c' failed
+make[1]: *** [cmTC_24b7c] Error 1
+make[1]: Leaving directory '/workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_24b7c/fast' failed
+make: *** [cmTC_24b7c/fast] Error 2
+
+File /workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_d0527/fast"
+/usr/bin/make -f CMakeFiles/cmTC_d0527.dir/build.make CMakeFiles/cmTC_d0527.dir/build
+make[1]: Entering directory '/workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_d0527.dir/CheckFunctionExists.cxx.o
+/usr/bin/c++    -DCHECK_FUNCTION_EXISTS=pthread_create   -std=gnu++1z -o CMakeFiles/cmTC_d0527.dir/CheckFunctionExists.cxx.o -c /workspace/DeliveryRobot/build/CMakeFiles/CheckLibraryExists/CheckFunctionExists.cxx
+Linking CXX executable cmTC_d0527
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d0527.dir/link.txt --verbose=1
+/usr/bin/c++   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_d0527.dir/CheckFunctionExists.cxx.o  -o cmTC_d0527 -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_d0527.dir/build.make:97: recipe for target 'cmTC_d0527' failed
+make[1]: *** [cmTC_d0527] Error 1
+make[1]: Leaving directory '/workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_d0527/fast' failed
+make: *** [cmTC_d0527/fast] Error 2
+
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_f0f10/fast"
+/usr/bin/make -f CMakeFiles/cmTC_f0f10.dir/build.make CMakeFiles/cmTC_f0f10.dir/build
+make[1]: Entering directory '/workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_f0f10.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -std=gnu++1z -o CMakeFiles/cmTC_f0f10.dir/CheckSymbolExists.cxx.o -c /workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+Linking CXX executable cmTC_f0f10
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f0f10.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_f0f10.dir/CheckSymbolExists.cxx.o  -o cmTC_f0f10 
+CMakeFiles/cmTC_f0f10.dir/CheckSymbolExists.cxx.o: In function `main':
+CheckSymbolExists.cxx:(.text+0x14): undefined reference to `pthread_create'
+CheckSymbolExists.cxx:(.text+0x18): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_f0f10.dir/build.make:97: recipe for target 'cmTC_f0f10' failed
+make[1]: *** [cmTC_f0f10] Error 1
+make[1]: Leaving directory '/workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_f0f10/fast' failed
+make: *** [cmTC_f0f10/fast] Error 2
+
+File /workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_794a0/fast"
+/usr/bin/make -f CMakeFiles/cmTC_794a0.dir/build.make CMakeFiles/cmTC_794a0.dir/build
+make[1]: Entering directory '/workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_794a0.dir/CheckFunctionExists.cxx.o
+/usr/bin/c++    -DCHECK_FUNCTION_EXISTS=pthread_create   -std=gnu++1z -o CMakeFiles/cmTC_794a0.dir/CheckFunctionExists.cxx.o -c /workspace/DeliveryRobot/build/CMakeFiles/CheckLibraryExists/CheckFunctionExists.cxx
+Linking CXX executable cmTC_794a0
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_794a0.dir/link.txt --verbose=1
+/usr/bin/c++   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_794a0.dir/CheckFunctionExists.cxx.o  -o cmTC_794a0 -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_794a0.dir/build.make:97: recipe for target 'cmTC_794a0' failed
+make[1]: *** [cmTC_794a0] Error 1
+make[1]: Leaving directory '/workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_794a0/fast' failed
+make: *** [cmTC_794a0/fast] Error 2
+
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_8eb8a/fast"
+/usr/bin/make -f CMakeFiles/cmTC_8eb8a.dir/build.make CMakeFiles/cmTC_8eb8a.dir/build
+make[1]: Entering directory '/workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_8eb8a.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -std=gnu++1z -o CMakeFiles/cmTC_8eb8a.dir/CheckSymbolExists.cxx.o -c /workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+Linking CXX executable cmTC_8eb8a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8eb8a.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_8eb8a.dir/CheckSymbolExists.cxx.o  -o cmTC_8eb8a 
+CMakeFiles/cmTC_8eb8a.dir/CheckSymbolExists.cxx.o: In function `main':
+CheckSymbolExists.cxx:(.text+0x14): undefined reference to `pthread_create'
+CheckSymbolExists.cxx:(.text+0x18): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_8eb8a.dir/build.make:97: recipe for target 'cmTC_8eb8a' failed
+make[1]: *** [cmTC_8eb8a] Error 1
+make[1]: Leaving directory '/workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_8eb8a/fast' failed
+make: *** [cmTC_8eb8a/fast] Error 2
+
+File /workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_ecd7d/fast"
+/usr/bin/make -f CMakeFiles/cmTC_ecd7d.dir/build.make CMakeFiles/cmTC_ecd7d.dir/build
+make[1]: Entering directory '/workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_ecd7d.dir/CheckFunctionExists.cxx.o
+/usr/bin/c++    -DCHECK_FUNCTION_EXISTS=pthread_create   -std=gnu++1z -o CMakeFiles/cmTC_ecd7d.dir/CheckFunctionExists.cxx.o -c /workspace/DeliveryRobot/build/CMakeFiles/CheckLibraryExists/CheckFunctionExists.cxx
+Linking CXX executable cmTC_ecd7d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ecd7d.dir/link.txt --verbose=1
+/usr/bin/c++   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_ecd7d.dir/CheckFunctionExists.cxx.o  -o cmTC_ecd7d -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_ecd7d.dir/build.make:97: recipe for target 'cmTC_ecd7d' failed
+make[1]: *** [cmTC_ecd7d] Error 1
+make[1]: Leaving directory '/workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_ecd7d/fast' failed
+make: *** [cmTC_ecd7d/fast] Error 2
+
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_b842e/fast"
+/usr/bin/make -f CMakeFiles/cmTC_b842e.dir/build.make CMakeFiles/cmTC_b842e.dir/build
+make[1]: Entering directory '/workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_b842e.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -std=gnu++1z -o CMakeFiles/cmTC_b842e.dir/CheckSymbolExists.cxx.o -c /workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+Linking CXX executable cmTC_b842e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b842e.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_b842e.dir/CheckSymbolExists.cxx.o  -o cmTC_b842e 
+CMakeFiles/cmTC_b842e.dir/CheckSymbolExists.cxx.o: In function `main':
+CheckSymbolExists.cxx:(.text+0x14): undefined reference to `pthread_create'
+CheckSymbolExists.cxx:(.text+0x18): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_b842e.dir/build.make:97: recipe for target 'cmTC_b842e' failed
+make[1]: *** [cmTC_b842e] Error 1
+make[1]: Leaving directory '/workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_b842e/fast' failed
+make: *** [cmTC_b842e/fast] Error 2
+
+File /workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_270cf/fast"
+/usr/bin/make -f CMakeFiles/cmTC_270cf.dir/build.make CMakeFiles/cmTC_270cf.dir/build
+make[1]: Entering directory '/workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_270cf.dir/CheckFunctionExists.cxx.o
+/usr/bin/c++    -DCHECK_FUNCTION_EXISTS=pthread_create   -std=gnu++1z -o CMakeFiles/cmTC_270cf.dir/CheckFunctionExists.cxx.o -c /workspace/DeliveryRobot/build/CMakeFiles/CheckLibraryExists/CheckFunctionExists.cxx
+Linking CXX executable cmTC_270cf
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_270cf.dir/link.txt --verbose=1
+/usr/bin/c++   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_270cf.dir/CheckFunctionExists.cxx.o  -o cmTC_270cf -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_270cf.dir/build.make:97: recipe for target 'cmTC_270cf' failed
+make[1]: *** [cmTC_270cf] Error 1
+make[1]: Leaving directory '/workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_270cf/fast' failed
+make: *** [cmTC_270cf/fast] Error 2
+
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_6cb52/fast"
+/usr/bin/make -f CMakeFiles/cmTC_6cb52.dir/build.make CMakeFiles/cmTC_6cb52.dir/build
+make[1]: Entering directory '/workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_6cb52.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -std=gnu++1z -o CMakeFiles/cmTC_6cb52.dir/CheckSymbolExists.cxx.o -c /workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+Linking CXX executable cmTC_6cb52
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6cb52.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_6cb52.dir/CheckSymbolExists.cxx.o  -o cmTC_6cb52 
+CMakeFiles/cmTC_6cb52.dir/CheckSymbolExists.cxx.o: In function `main':
+CheckSymbolExists.cxx:(.text+0x14): undefined reference to `pthread_create'
+CheckSymbolExists.cxx:(.text+0x18): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_6cb52.dir/build.make:97: recipe for target 'cmTC_6cb52' failed
+make[1]: *** [cmTC_6cb52] Error 1
+make[1]: Leaving directory '/workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_6cb52/fast' failed
+make: *** [cmTC_6cb52/fast] Error 2
+
+File /workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_7be0e/fast"
+/usr/bin/make -f CMakeFiles/cmTC_7be0e.dir/build.make CMakeFiles/cmTC_7be0e.dir/build
+make[1]: Entering directory '/workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_7be0e.dir/CheckFunctionExists.cxx.o
+/usr/bin/c++    -DCHECK_FUNCTION_EXISTS=pthread_create   -std=gnu++1z -o CMakeFiles/cmTC_7be0e.dir/CheckFunctionExists.cxx.o -c /workspace/DeliveryRobot/build/CMakeFiles/CheckLibraryExists/CheckFunctionExists.cxx
+Linking CXX executable cmTC_7be0e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7be0e.dir/link.txt --verbose=1
+/usr/bin/c++   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_7be0e.dir/CheckFunctionExists.cxx.o  -o cmTC_7be0e -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_7be0e.dir/build.make:97: recipe for target 'cmTC_7be0e' failed
+make[1]: *** [cmTC_7be0e] Error 1
+make[1]: Leaving directory '/workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_7be0e/fast' failed
+make: *** [cmTC_7be0e/fast] Error 2
+
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_b8283/fast"
+/usr/bin/make -f CMakeFiles/cmTC_b8283.dir/build.make CMakeFiles/cmTC_b8283.dir/build
+make[1]: Entering directory '/workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_b8283.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -std=gnu++1z -o CMakeFiles/cmTC_b8283.dir/CheckSymbolExists.cxx.o -c /workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+Linking CXX executable cmTC_b8283
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b8283.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_b8283.dir/CheckSymbolExists.cxx.o  -o cmTC_b8283 
+CMakeFiles/cmTC_b8283.dir/CheckSymbolExists.cxx.o: In function `main':
+CheckSymbolExists.cxx:(.text+0x14): undefined reference to `pthread_create'
+CheckSymbolExists.cxx:(.text+0x18): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_b8283.dir/build.make:97: recipe for target 'cmTC_b8283' failed
+make[1]: *** [cmTC_b8283] Error 1
+make[1]: Leaving directory '/workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_b8283/fast' failed
+make: *** [cmTC_b8283/fast] Error 2
+
+File /workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_39a17/fast"
+/usr/bin/make -f CMakeFiles/cmTC_39a17.dir/build.make CMakeFiles/cmTC_39a17.dir/build
+make[1]: Entering directory '/workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_39a17.dir/CheckFunctionExists.cxx.o
+/usr/bin/c++    -DCHECK_FUNCTION_EXISTS=pthread_create   -std=gnu++1z -o CMakeFiles/cmTC_39a17.dir/CheckFunctionExists.cxx.o -c /workspace/DeliveryRobot/build/CMakeFiles/CheckLibraryExists/CheckFunctionExists.cxx
+Linking CXX executable cmTC_39a17
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_39a17.dir/link.txt --verbose=1
+/usr/bin/c++   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_39a17.dir/CheckFunctionExists.cxx.o  -o cmTC_39a17 -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_39a17.dir/build.make:97: recipe for target 'cmTC_39a17' failed
+make[1]: *** [cmTC_39a17] Error 1
+make[1]: Leaving directory '/workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_39a17/fast' failed
+make: *** [cmTC_39a17/fast] Error 2
+
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_89f47/fast"
+/usr/bin/make -f CMakeFiles/cmTC_89f47.dir/build.make CMakeFiles/cmTC_89f47.dir/build
+make[1]: Entering directory '/workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_89f47.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -std=gnu++1z -o CMakeFiles/cmTC_89f47.dir/CheckSymbolExists.cxx.o -c /workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+Linking CXX executable cmTC_89f47
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_89f47.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_89f47.dir/CheckSymbolExists.cxx.o  -o cmTC_89f47 
+CMakeFiles/cmTC_89f47.dir/CheckSymbolExists.cxx.o: In function `main':
+CheckSymbolExists.cxx:(.text+0x14): undefined reference to `pthread_create'
+CheckSymbolExists.cxx:(.text+0x18): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_89f47.dir/build.make:97: recipe for target 'cmTC_89f47' failed
+make[1]: *** [cmTC_89f47] Error 1
+make[1]: Leaving directory '/workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_89f47/fast' failed
+make: *** [cmTC_89f47/fast] Error 2
+
+File /workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_96f60/fast"
+/usr/bin/make -f CMakeFiles/cmTC_96f60.dir/build.make CMakeFiles/cmTC_96f60.dir/build
+make[1]: Entering directory '/workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_96f60.dir/CheckFunctionExists.cxx.o
+/usr/bin/c++    -DCHECK_FUNCTION_EXISTS=pthread_create   -std=gnu++1z -o CMakeFiles/cmTC_96f60.dir/CheckFunctionExists.cxx.o -c /workspace/DeliveryRobot/build/CMakeFiles/CheckLibraryExists/CheckFunctionExists.cxx
+Linking CXX executable cmTC_96f60
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_96f60.dir/link.txt --verbose=1
+/usr/bin/c++   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_96f60.dir/CheckFunctionExists.cxx.o  -o cmTC_96f60 -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_96f60.dir/build.make:97: recipe for target 'cmTC_96f60' failed
+make[1]: *** [cmTC_96f60] Error 1
+make[1]: Leaving directory '/workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_96f60/fast' failed
+make: *** [cmTC_96f60/fast] Error 2
+
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_a1c84/fast"
+/usr/bin/make -f CMakeFiles/cmTC_a1c84.dir/build.make CMakeFiles/cmTC_a1c84.dir/build
+make[1]: Entering directory '/workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_a1c84.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -std=gnu++1z -o CMakeFiles/cmTC_a1c84.dir/CheckSymbolExists.cxx.o -c /workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+Linking CXX executable cmTC_a1c84
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a1c84.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_a1c84.dir/CheckSymbolExists.cxx.o  -o cmTC_a1c84 
+CMakeFiles/cmTC_a1c84.dir/CheckSymbolExists.cxx.o: In function `main':
+CheckSymbolExists.cxx:(.text+0x14): undefined reference to `pthread_create'
+CheckSymbolExists.cxx:(.text+0x18): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_a1c84.dir/build.make:97: recipe for target 'cmTC_a1c84' failed
+make[1]: *** [cmTC_a1c84] Error 1
+make[1]: Leaving directory '/workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_a1c84/fast' failed
+make: *** [cmTC_a1c84/fast] Error 2
+
+File /workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_be964/fast"
+/usr/bin/make -f CMakeFiles/cmTC_be964.dir/build.make CMakeFiles/cmTC_be964.dir/build
+make[1]: Entering directory '/workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_be964.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -std=gnu++1z -o CMakeFiles/cmTC_be964.dir/CheckSymbolExists.cxx.o -c /workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+Linking CXX executable cmTC_be964
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_be964.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_be964.dir/CheckSymbolExists.cxx.o  -o cmTC_be964 
+CMakeFiles/cmTC_be964.dir/CheckSymbolExists.cxx.o: In function `main':
+CheckSymbolExists.cxx:(.text+0x14): undefined reference to `pthread_create'
+CheckSymbolExists.cxx:(.text+0x18): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_be964.dir/build.make:97: recipe for target 'cmTC_be964' failed
+make[1]: *** [cmTC_be964] Error 1
+make[1]: Leaving directory '/workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_be964/fast' failed
+make: *** [cmTC_be964/fast] Error 2
+
+File /workspace/DeliveryRobot/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+

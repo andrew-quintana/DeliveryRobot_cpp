@@ -15,7 +15,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/usr/lib/cmake/Boost-1.85.0"
+			"value" : "/usr/local/lib/cmake/Boost-1.86.0"
 		},
 		{
 			"name" : "Boost_FILESYSTEM_LIBRARY_RELEASE",
@@ -27,7 +27,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "/usr/lib/libboost_filesystem.so.1.85.0"
+			"value" : "/usr/local/lib/libboost_filesystem.so.1.86.0"
 		},
 		{
 			"name" : "Boost_INCLUDE_DIR",
@@ -39,7 +39,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/usr/include"
+			"value" : "Boost_INCLUDE_DIR-NOTFOUND"
 		},
 		{
 			"name" : "Boost_SYSTEM_LIBRARY_RELEASE",
@@ -51,7 +51,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "/usr/lib/libboost_system.so.1.85.0"
+			"value" : "/usr/local/lib/libboost_system.so.1.86.0"
 		},
 		{
 			"name" : "CMAKE_ADDR2LINE",
@@ -1187,7 +1187,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "[/usr/lib/cmake/Boost-1.85.0/BoostConfig.cmake][cfound components: system filesystem ][v1.85.0()]"
+			"value" : "[/usr/local/lib/cmake/Boost-1.86.0/BoostConfig.cmake][cfound components: system filesystem ][v1.86.0()]"
 		},
 		{
 			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_GTest",
@@ -1199,7 +1199,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "[/usr/lib/libgtest.a][/usr/include][/usr/lib/libgtest_main.a][v()]"
+			"value" : "[/usr/local/lib/libgtest.a][/usr/local/include][/usr/local/lib/libgtest_main.a][v()]"
 		},
 		{
 			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_OpenCV",
@@ -1211,7 +1211,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "[/usr][v4.9.0()]"
+			"value" : "[/usr/local][v4.9.0()]"
 		},
 		{
 			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_PYTHON",
@@ -1315,7 +1315,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/usr/include"
+			"value" : "/usr/local/include"
 		},
 		{
 			"name" : "GTEST_LIBRARY",
@@ -1331,7 +1331,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/lib/libgtest.a"
+			"value" : "/usr/local/lib/libgtest.a"
 		},
 		{
 			"name" : "GTEST_LIBRARY_DEBUG",
@@ -1363,7 +1363,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/lib/libgtest_main.a"
+			"value" : "/usr/local/lib/libgtest_main.a"
 		},
 		{
 			"name" : "GTEST_MAIN_LIBRARY_DEBUG",
@@ -1415,7 +1415,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/usr/lib/aarch64-linux-gnu/cmake/opencv4"
+			"value" : "/usr/local/lib/cmake/opencv4"
 		},
 		{
 			"name" : "PYBIND11_PYTHONLIBS_OVERWRITE",
@@ -1647,7 +1647,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/usr/lib/cmake/boost_atomic-1.85.0"
+			"value" : "/usr/local/lib/cmake/boost_atomic-1.86.0"
 		},
 		{
 			"name" : "boost_filesystem_DIR",
@@ -1663,7 +1663,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/usr/lib/cmake/boost_filesystem-1.85.0"
+			"value" : "/usr/local/lib/cmake/boost_filesystem-1.86.0"
 		},
 		{
 			"name" : "boost_headers_DIR",
@@ -1679,7 +1679,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/usr/lib/cmake/boost_headers-1.85.0"
+			"value" : "/usr/local/lib/cmake/boost_headers-1.86.0"
 		},
 		{
 			"name" : "boost_system_DIR",
@@ -1695,7 +1695,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/usr/lib/cmake/boost_system-1.85.0"
+			"value" : "/usr/local/lib/cmake/boost_system-1.86.0"
 		},
 		{
 			"name" : "delivery_module_BINARY_DIR",
@@ -1731,7 +1731,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "general;apriltag;general;opencv_calib3d;general;opencv_core;general;opencv_dnn;general;opencv_features2d;general;opencv_flann;general;opencv_gapi;general;opencv_highgui;general;opencv_imgcodecs;general;opencv_imgproc;general;opencv_ml;general;opencv_objdetect;general;opencv_photo;general;opencv_stitching;general;opencv_video;general;opencv_videoio;general;Boost::system;general;Boost::filesystem;general;/usr/lib/libgtest.a;general;/usr/lib/libgtest_main.a;"
+			"value" : "general;apriltag;general;opencv_calib3d;general;opencv_core;general;opencv_dnn;general;opencv_features2d;general;opencv_flann;general;opencv_gapi;general;opencv_highgui;general;opencv_imgcodecs;general;opencv_imgproc;general;opencv_ml;general;opencv_objdetect;general;opencv_photo;general;opencv_stitching;general;opencv_video;general;opencv_videoio;general;Boost::system;general;Boost::filesystem;general;/usr/local/lib/libgtest.a;general;/usr/local/lib/libgtest_main.a;"
 		},
 		{
 			"name" : "delivery_module_SOURCE_DIR",

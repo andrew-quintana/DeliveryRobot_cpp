@@ -477,11 +477,11 @@
 		},
 		{
 			"isExternal" : true,
-			"path" : "/usr/lib/aarch64-linux-gnu/cmake/opencv4/OpenCVConfig-version.cmake"
+			"path" : "/usr/local/lib/cmake/opencv4/OpenCVConfig-version.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/usr/lib/aarch64-linux-gnu/cmake/opencv4/OpenCVConfig.cmake"
+			"path" : "/usr/local/lib/cmake/opencv4/OpenCVConfig.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -495,11 +495,11 @@
 		},
 		{
 			"isExternal" : true,
-			"path" : "/usr/lib/aarch64-linux-gnu/cmake/opencv4/OpenCVModules.cmake"
+			"path" : "/usr/local/lib/cmake/opencv4/OpenCVModules.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/usr/lib/aarch64-linux-gnu/cmake/opencv4/OpenCVModules-release.cmake"
+			"path" : "/usr/local/lib/cmake/opencv4/OpenCVModules-release.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -518,103 +518,103 @@
 		},
 		{
 			"isExternal" : true,
-			"path" : "/usr/lib/cmake/Boost-1.85.0/BoostConfigVersion.cmake"
+			"path" : "/usr/local/lib/cmake/Boost-1.86.0/BoostConfigVersion.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/usr/lib/cmake/Boost-1.85.0/BoostConfig.cmake"
+			"path" : "/usr/local/lib/cmake/Boost-1.86.0/BoostConfig.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/usr/lib/cmake/boost_headers-1.85.0/boost_headers-config-version.cmake"
+			"path" : "/usr/local/lib/cmake/boost_headers-1.86.0/boost_headers-config-version.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/usr/lib/cmake/boost_headers-1.85.0/boost_headers-config.cmake"
+			"path" : "/usr/local/lib/cmake/boost_headers-1.86.0/boost_headers-config.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/usr/lib/cmake/boost_system-1.85.0/boost_system-config-version.cmake"
+			"path" : "/usr/local/lib/cmake/boost_system-1.86.0/boost_system-config-version.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/usr/lib/cmake/boost_system-1.85.0/boost_system-config.cmake"
+			"path" : "/usr/local/lib/cmake/boost_system-1.86.0/boost_system-config.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/usr/lib/cmake/BoostDetectToolset-1.85.0.cmake"
+			"path" : "/usr/local/lib/cmake/BoostDetectToolset-1.86.0.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/usr/lib/cmake/boost_system-1.85.0/libboost_system-variant-shared.cmake"
+			"path" : "/usr/local/lib/cmake/boost_system-1.86.0/libboost_system-variant-shared.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/usr/lib/cmake/boost_system-1.85.0/libboost_system-variant-static.cmake"
+			"path" : "/usr/local/lib/cmake/boost_system-1.86.0/libboost_system-variant-static.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/usr/lib/cmake/boost_headers-1.85.0/boost_headers-config-version.cmake"
+			"path" : "/usr/local/lib/cmake/boost_headers-1.86.0/boost_headers-config-version.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/usr/lib/cmake/boost_headers-1.85.0/boost_headers-config.cmake"
+			"path" : "/usr/local/lib/cmake/boost_headers-1.86.0/boost_headers-config.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/usr/lib/cmake/boost_filesystem-1.85.0/boost_filesystem-config-version.cmake"
+			"path" : "/usr/local/lib/cmake/boost_filesystem-1.86.0/boost_filesystem-config-version.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/usr/lib/cmake/boost_filesystem-1.85.0/boost_filesystem-config.cmake"
+			"path" : "/usr/local/lib/cmake/boost_filesystem-1.86.0/boost_filesystem-config.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/usr/lib/cmake/BoostDetectToolset-1.85.0.cmake"
+			"path" : "/usr/local/lib/cmake/BoostDetectToolset-1.86.0.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/usr/lib/cmake/boost_filesystem-1.85.0/libboost_filesystem-variant-shared.cmake"
+			"path" : "/usr/local/lib/cmake/boost_filesystem-1.86.0/libboost_filesystem-variant-shared.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/usr/lib/cmake/boost_filesystem-1.85.0/libboost_filesystem-variant-static.cmake"
+			"path" : "/usr/local/lib/cmake/boost_filesystem-1.86.0/libboost_filesystem-variant-static.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/usr/lib/cmake/boost_atomic-1.85.0/boost_atomic-config-version.cmake"
+			"path" : "/usr/local/lib/cmake/boost_atomic-1.86.0/boost_atomic-config-version.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/usr/lib/cmake/boost_atomic-1.85.0/boost_atomic-config.cmake"
+			"path" : "/usr/local/lib/cmake/boost_atomic-1.86.0/boost_atomic-config.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/usr/lib/cmake/BoostDetectToolset-1.85.0.cmake"
+			"path" : "/usr/local/lib/cmake/BoostDetectToolset-1.86.0.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/usr/lib/cmake/boost_atomic-1.85.0/libboost_atomic-variant-shared.cmake"
+			"path" : "/usr/local/lib/cmake/boost_atomic-1.86.0/libboost_atomic-variant-shared.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/usr/lib/cmake/boost_atomic-1.85.0/libboost_atomic-variant-static.cmake"
+			"path" : "/usr/local/lib/cmake/boost_atomic-1.86.0/libboost_atomic-variant-static.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/usr/lib/cmake/boost_headers-1.85.0/boost_headers-config-version.cmake"
+			"path" : "/usr/local/lib/cmake/boost_headers-1.86.0/boost_headers-config-version.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/usr/lib/cmake/boost_headers-1.85.0/boost_headers-config.cmake"
+			"path" : "/usr/local/lib/cmake/boost_headers-1.86.0/boost_headers-config.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/usr/lib/cmake/boost_headers-1.85.0/boost_headers-config-version.cmake"
+			"path" : "/usr/local/lib/cmake/boost_headers-1.86.0/boost_headers-config-version.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/usr/lib/cmake/boost_headers-1.85.0/boost_headers-config.cmake"
+			"path" : "/usr/local/lib/cmake/boost_headers-1.86.0/boost_headers-config.cmake"
 		},
 		{
 			"isCMake" : true,

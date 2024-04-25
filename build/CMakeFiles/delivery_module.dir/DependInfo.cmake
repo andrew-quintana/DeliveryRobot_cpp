@@ -1,22 +1,50 @@
-
-# Consider dependencies only in project.
-set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
-
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
+  "CXX"
+  )
+# The set of files for implicit dependencies of each language:
+set(CMAKE_DEPENDS_CHECK_CXX
+  "/workspace/DeliveryRobot/cpp/src/AprilTagSensor.cpp" "/workspace/DeliveryRobot/build/CMakeFiles/delivery_module.dir/cpp/src/AprilTagSensor.cpp.o"
+  "/workspace/DeliveryRobot/cpp/src/Astar.cpp" "/workspace/DeliveryRobot/build/CMakeFiles/delivery_module.dir/cpp/src/Astar.cpp.o"
+  "/workspace/DeliveryRobot/cpp/src/BoostGraph.cpp" "/workspace/DeliveryRobot/build/CMakeFiles/delivery_module.dir/cpp/src/BoostGraph.cpp.o"
+  "/workspace/DeliveryRobot/cpp/src/CameraCalibration.cpp" "/workspace/DeliveryRobot/build/CMakeFiles/delivery_module.dir/cpp/src/CameraCalibration.cpp.o"
+  "/workspace/DeliveryRobot/cpp/src/ComputationalGeometry.cpp" "/workspace/DeliveryRobot/build/CMakeFiles/delivery_module.dir/cpp/src/ComputationalGeometry.cpp.o"
+  "/workspace/DeliveryRobot/cpp/src/DeliveryFSM.cpp" "/workspace/DeliveryRobot/build/CMakeFiles/delivery_module.dir/cpp/src/DeliveryFSM.cpp.o"
+  "/workspace/DeliveryRobot/cpp/src/Mapper.cpp" "/workspace/DeliveryRobot/build/CMakeFiles/delivery_module.dir/cpp/src/Mapper.cpp.o"
+  "/workspace/DeliveryRobot/cpp/src/OnlineSLAM.cpp" "/workspace/DeliveryRobot/build/CMakeFiles/delivery_module.dir/cpp/src/OnlineSLAM.cpp.o"
+  "/workspace/DeliveryRobot/cpp/src/Utilities.cpp" "/workspace/DeliveryRobot/build/CMakeFiles/delivery_module.dir/cpp/src/Utilities.cpp.o"
+  )
+set(CMAKE_CXX_COMPILER_ID "GNU")
+
+# Preprocessor definitions for this target.
+set(CMAKE_TARGET_DEFINITIONS_CXX
+  "BOOST_ATOMIC_NO_LIB"
+  "BOOST_ATOMIC_STATIC_LINK"
+  "BOOST_CHRONO_NO_LIB"
+  "BOOST_CHRONO_STATIC_LINK"
+  "BOOST_CONTAINER_NO_LIB"
+  "BOOST_CONTAINER_STATIC_LINK"
+  "BOOST_DATE_TIME_NO_LIB"
+  "BOOST_DATE_TIME_STATIC_LINK"
+  "BOOST_GRAPH_NO_LIB"
+  "BOOST_GRAPH_STATIC_LINK"
+  "BOOST_RANDOM_NO_LIB"
+  "BOOST_RANDOM_STATIC_LINK"
+  "BOOST_SERIALIZATION_NO_LIB"
+  "BOOST_SERIALIZATION_STATIC_LINK"
+  "BOOST_THREAD_NO_LIB"
+  "BOOST_THREAD_STATIC_LINK"
+  "BOOST_THREAD_USE_LIB"
   )
 
-# The set of dependency files which are needed:
-set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/jetbot/DeliveryRobot/cpp/src/AprilTagSensor.cpp" "CMakeFiles/delivery_module.dir/cpp/src/AprilTagSensor.cpp.o" "gcc" "CMakeFiles/delivery_module.dir/cpp/src/AprilTagSensor.cpp.o.d"
-  "/home/jetbot/DeliveryRobot/cpp/src/Astar.cpp" "CMakeFiles/delivery_module.dir/cpp/src/Astar.cpp.o" "gcc" "CMakeFiles/delivery_module.dir/cpp/src/Astar.cpp.o.d"
-  "/home/jetbot/DeliveryRobot/cpp/src/BoostGraph.cpp" "CMakeFiles/delivery_module.dir/cpp/src/BoostGraph.cpp.o" "gcc" "CMakeFiles/delivery_module.dir/cpp/src/BoostGraph.cpp.o.d"
-  "/home/jetbot/DeliveryRobot/cpp/src/CameraCalibration.cpp" "CMakeFiles/delivery_module.dir/cpp/src/CameraCalibration.cpp.o" "gcc" "CMakeFiles/delivery_module.dir/cpp/src/CameraCalibration.cpp.o.d"
-  "/home/jetbot/DeliveryRobot/cpp/src/ComputationalGeometry.cpp" "CMakeFiles/delivery_module.dir/cpp/src/ComputationalGeometry.cpp.o" "gcc" "CMakeFiles/delivery_module.dir/cpp/src/ComputationalGeometry.cpp.o.d"
-  "/home/jetbot/DeliveryRobot/cpp/src/DeliveryFSM.cpp" "CMakeFiles/delivery_module.dir/cpp/src/DeliveryFSM.cpp.o" "gcc" "CMakeFiles/delivery_module.dir/cpp/src/DeliveryFSM.cpp.o.d"
-  "/home/jetbot/DeliveryRobot/cpp/src/Mapper.cpp" "CMakeFiles/delivery_module.dir/cpp/src/Mapper.cpp.o" "gcc" "CMakeFiles/delivery_module.dir/cpp/src/Mapper.cpp.o.d"
-  "/home/jetbot/DeliveryRobot/cpp/src/OnlineSLAM.cpp" "CMakeFiles/delivery_module.dir/cpp/src/OnlineSLAM.cpp.o" "gcc" "CMakeFiles/delivery_module.dir/cpp/src/OnlineSLAM.cpp.o.d"
-  "/home/jetbot/DeliveryRobot/cpp/src/Utilities.cpp" "CMakeFiles/delivery_module.dir/cpp/src/Utilities.cpp.o" "gcc" "CMakeFiles/delivery_module.dir/cpp/src/Utilities.cpp.o.d"
+# The include file search paths:
+set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "/workspace/libraries/include"
+  "/workspace/libraries/include/opencv4"
+  "/workspace/libraries/include/eigen3"
+  "../cpp/include"
+  "/workspace/.local/lib/python3.6/site-packages/pybind11/include"
+  "/usr/include/python3.6m"
   )
 
 # Targets to which this target links.
