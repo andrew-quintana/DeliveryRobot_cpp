@@ -8,4 +8,4 @@ As of 05/28/2024, the plan is to finish these in DeliveryRobot:
 
 Once these are completed, the roadmap will include:
 1. component modularization (LiDAR mapping, epipolar mapping, encoder measurement recall, IMU recall)
-2. A* redundancy planning: Astar prioritization of redundant systems and methods of navigation inspired by F.E.A.R. video game AI
+2. AI based redundancy decision making
